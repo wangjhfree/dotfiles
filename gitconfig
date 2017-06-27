@@ -1,0 +1,7 @@
+[credential]
+	helper = store
+[user]
+	name = wangjunhui
+	email = wangjunhui@qccr.com
+[core]
+	editor = /usr/local/bin/vim

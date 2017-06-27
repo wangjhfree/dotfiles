@@ -1,0 +1,8 @@
+[
+    {
+        "keys": ["f6"],
+        "command": "markdown_preview",
+        "args": {"target": "browser", "parser":"markdown"}
+    }
+
+]

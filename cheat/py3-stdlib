@@ -1,0 +1,25 @@
+# python文件服务器
+python -m SimpleHTTPServer
+
+
+# 16. Generic Operating System Services - 通用操作系统服务
+
+# 16.4.  argparse — 解析命令行参数的Parser工具
+en[https://docs.python.org/3/library/argparse.html]
+zh[http://python.usyiyi.cn/translate/python_352/library/argparse.html]
+
+
+# 17. Concurrent Execution - 并发执行
+
+## 17.5. subprocess - 管理子进程
+en[https://docs.python.org/3/library/subprocess.html]
+zh[http://python.usyiyi.cn/translate/python_352/library/subprocess.html]
+
+
+# 21. Internet Protocols and Support - 网络协议与支持
+
+## 21.17. smtplib — SMTP 协议客户端
+en[https://docs.python.org/3/library/smtplib.html]
+zh[http://python.usyiyi.cn/translate/python_352/library/smtplib.html]
+
+

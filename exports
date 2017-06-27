@@ -1,0 +1,17 @@
+# mysql
+export PATH=$PATH:/usr/local/mysql/bin
+export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
+
+# node manager nvm
+export NVM_NODEJS_ORG_MIRROR=https://npm.taobao.org/mirrors/node
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh"  ] && . "$NVM_DIR/nvm.sh"
+
+# cheat
+export CHEAT_EDITOR="/usr/local/bin/vim"
+export CHEATCOLORS=true
+# cheat autocompletion; just add to ~/.zshrc
+_cmpl_cheat() {
+    reply=($(cheat -l | cut -d' ' -f1))
+}
+compctl -K _cmpl_cheat cheat

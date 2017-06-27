@@ -1,0 +1,35 @@
+{
+	"bootstrapped": true,
+	"channels":
+	[
+		"/Users/Jhui/Mac/dotfiles/sublime/channel_v3.json"
+	],
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"AutoFileName",
+		"Autoprefixer",
+		"BracketHighlighter",
+		"Emmet",
+		"Git",
+		"GitGutter",
+		"HTML-CSS-JS Prettify",
+		"Markdown Preview",
+		"MarkdownEditing",
+		"MarkdownHighlighting",
+		"Package Control",
+		"SideBarEnhancements",
+		"SublimeCodeIntel",
+		"SublimeLinter",
+		"SublimeLinter-jshint",
+		"SublimeLinter-json",
+		"SublimeTmpl",
+		"SyncedSideBar",
+		"Terminal",
+		"TrailingSpaces",
+		"TypeScript",
+		"Vue Syntax Highlight"
+	]
+}
