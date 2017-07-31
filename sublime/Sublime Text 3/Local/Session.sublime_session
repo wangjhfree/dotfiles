@@ -1,55 +1,25 @@
 {
 	"folder_history":
 	[
-		"/Users/Jhui/qccr/tconfig",
-		"/Users/Jhui/qccr/tkeeper",
-		"/Users/Jhui/project/selfone",
-		"/Users/Jhui/qccr/cmdb",
+		"/Users/Jhui/jc/jumpserver",
 		"/Users/Jhui/qccr/crywgl",
-		"/Users/Jhui/Mac",
-		"/Users/Jhui/jc/learning",
-		"/Users/Jhui/jc/learning/build",
-		"/Users/Jhui/jc/learning/jcylearningboss/app",
-		"/Users/Jhui/Downloads/Lepus_v3.8_beta",
+		"/Users/Jhui/jc/cmdb",
+		"/Users/Jhui/Downloads/mysqlclient-python-1.3.9",
 		"/Users/Jhui/jc",
-		"/Users/Jhui/qccr",
-		"/Users/Jhui/project/hrjia/hrjia-wechat",
-		"/Users/Jhui/project/pyframe",
-		"/Users/Jhui/Mac/developer",
+		"/Users/Jhui/qccr/jumpserver-跳板机",
+		"/Users/Jhui/qccr/nginx",
 		"/Users/Jhui/qccr/techapi-统一接口管理中心",
-		"/Users/Jhui/project",
-		"/Users/Jhui/python",
-		"/Users/Jhui/venv/venv2",
-		"/Users/Jhui/demo",
-		"/Users/Jhui/tornado",
-		"/Users/Jhui/tornado/demos/webspider",
-		"/Users/Jhui/Downloads/monitor_agent-0.1.0",
-		"/Users/Jhui/project/hrjia",
-		"/Users/Jhui/Mac/hawk",
-		"/Users/Jhui/project/new_printer",
-		"/Users/Jhui/Downloads/channels",
-		"/Users/Jhui/Downloads/channels/",
-		"/Users/Jhui/project/hrjia/hrjia-api",
-		"/Users/Jhui/qccr/tconfig/",
-		"/Users/Jhui/python/cpython",
-		"/Users/Jhui/Documents/machinelearninginaction",
-		"/Users/Jhui/qccr/jobcenter-任务调度系统",
-		"/Users/Jhui/qccr/pyqccr-公共库",
-		"/Users/Jhui/qccr/apicenter-统一接口管理中心",
-		"/usr/local/Frameworks/Python.framework/Versions/3.6",
-		"/usr/local/Frameworks/Python.framework/Versions/2.7",
-		"/Users/Jhui/qccr/logmanager",
-		"/Users/Jhui/BLOG",
-		"/Users/Jhui/hawk",
-		"/Users/Jhui/qccr/crywgl/crywgl",
-		"/private"
+		"/Users/Jhui/qccr/tkeeper",
+		"/Users/Jhui/qccr/tconfig",
+		"/Users/Jhui/qccr/cmdb",
+		"/Users/Jhui"
 	],
 	"last_version": 3126,
-	"last_window_id": 302,
+	"last_window_id": 96,
 	"log_indexing": false,
 	"settings":
 	{
-		"new_window_height": 723.0,
+		"new_window_height": 776.0,
 		"new_window_settings":
 		{
 			"auto_complete":
@@ -57,184 +27,24 @@
 				"selected_items":
 				[
 					[
-						"re",
-						"remote_ip"
+						"sy",
+						"system〔function〕"
 					],
 					[
-						"rem",
-						"remote_tomcat〔variable〕"
+						"cir",
+						"circuit_view"
 					],
 					[
-						"remo",
-						"remote_path"
+						"op",
+						"option\tTag"
 					],
 					[
-						"hos",
-						"hostname"
+						"req",
+						"request"
 					],
 					[
-						"b",
-						"b\tTag"
-					],
-					[
-						"de",
-						"DEBUG_LEAK〔variable〕"
-					],
-					[
-						"DE",
-						"DEBUG_STATS〔variable〕"
-					],
-					[
-						"im",
-						"images"
-					],
-					[
-						"Py",
-						"Python虚拟机框架"
-					],
-					[
-						"Python虚拟机中的",
-						"Python虚拟机中的类机制"
-					],
-					[
-						"Python",
-						"Python虚拟机中的控制流"
-					],
-					[
-						"Python虚拟机中",
-						"Python虚拟机中的控制流"
-					],
-					[
-						"Pytho",
-						"Python虚拟机中的一般表达式"
-					],
-					[
-						"Pyt",
-						"Python"
-					],
-					[
-						"bu",
-						"builtin"
-					],
-					[
-						"e",
-						"email"
-					],
-					[
-						"que",
-						"queue_name"
-					],
-					[
-						"se",
-						"settings〔module〕"
-					],
-					[
-						"release",
-						"release_type"
-					],
-					[
-						"rele",
-						"release_type"
-					],
-					[
-						"env",
-						"environmentmodule"
-					],
-					[
-						"reles",
-						"release_record_service〔module〕"
-					],
-					[
-						"dep",
-						"deploy_server_list"
-					],
-					[
-						"ma",
-						"mail_list"
-					],
-					[
-						"a",
-						"a\tTag"
-					],
-					[
-						"get",
-						"getrefcount"
-					],
-					[
-						"ob",
-						"ob_type"
-					],
-					[
-						"obj",
-						"object"
-					],
-					[
-						"stack",
-						"stack_status"
-					],
-					[
-						"install",
-						"install_stack_id"
-					],
-					[
-						"con",
-						"console"
-					],
-					[
-						"this",
-						"this_dom〔argument〕"
-					],
-					[
-						"chi",
-						"children"
-					],
-					[
-						"is",
-						"ispublic"
-					],
-					[
-						"ip",
-						"ipandport"
-					],
-					[
-						"midd",
-						"middleware_id"
-					],
-					[
-						"ins",
-						"install_stack_id"
-					],
-					[
-						"stat",
-						"stack_status"
-					],
-					[
-						"o",
-						"objects"
-					],
-					[
-						"Midd",
-						"MiddlewareTemplateMiddlewareFlag〔module〕"
-					],
-					[
-						"M",
-						"MiddlewareFlag"
-					],
-					[
-						"module_restart",
-						"module_restart_record_id"
-					],
-					[
-						"ModuleServer",
-						"ModuleServerRestartRecord"
-					],
-					[
-						"192",
-						"192.168.1.111"
-					],
-					[
-						"res",
-						"result"
+						"depl",
+						"deploy_web〔function〕"
 					]
 				]
 			},
@@ -244,76 +54,24 @@
 			"build_varint": "",
 			"command_palette":
 			{
-				"height": 387.0,
+				"height": 392.0,
 				"last_filter": "setting",
 				"selected_items":
 				[
 					[
 						"setting",
-						"Preferences: Settings"
-					],
-					[
-						"insta",
-						"Package Control: Install Package"
-					],
-					[
-						"KE",
-						"Preferences: Key Bindings"
-					],
-					[
-						"settig",
-						"Preferences: Settings"
-					],
-					[
-						"sett",
-						"Preferences: MarkdownEditing Settings – Default"
-					],
-					[
-						"user",
-						"Preferences: MarkdownEditing Settings – User"
-					],
-					[
-						"list",
-						"Package Control: List Packages"
-					],
-					[
-						"git",
-						"Git: Diff Staged Files"
+						"Preferences: Package Control Settings – Default"
 					],
 					[
 						"install",
-						"Package Control: Install Package"
-					],
-					[
-						"rem",
-						"Package Control: Remove Package"
-					],
-					[
-						"inst",
-						"Package Control: Install Package"
-					],
-					[
-						"ins",
-						"Package Control: Install Package"
-					],
-					[
-						"remove",
-						"Package Control: Remove Package"
-					],
-					[
-						"bing",
-						"Preferences: Terminal Key Bindings – User"
-					],
-					[
-						"pacuser",
-						"Preferences: Package Control Settings – User"
+						"Install Package Control"
 					]
 				],
 				"width": 593.0
 			},
 			"console":
 			{
-				"height": 304.0,
+				"height": 0.0,
 				"history":
 				[
 				]
@@ -329,138 +87,112 @@
 			},
 			"file_history":
 			[
-				"/Users/Jhui/Mac/dotfiles/README.md",
-				"/Users/Jhui/Mac/dotfiles/setup.sh",
-				"/Users/Jhui/jc/learning/settings.xml",
+				"/Users/Jhui/Downloads/wangjh.pem",
+				"/Users/Jhui/jc/jumpserver/apps/common/tasks.py",
+				"/Users/Jhui/jc/jumpserver/apps/assets/models/asset.py",
+				"/Users/Jhui/Downloads/deploypre.py",
+				"/Users/Jhui/Downloads/deploypro.py",
+				"/Users/Jhui/Downloads/deploypr",
+				"/Users/Jhui/jc/shop/web.py",
+				"/Users/Jhui/jc/shop/fun.sql",
+				"/Users/Jhui/jc/jumpserver/config.py",
+				"/Users/Jhui/jc/jumpserver/apps/users/utils.py",
+				"/Users/Jhui/jc/jumpserver/apps/users/urls/views_urls.py",
+				"/Users/Jhui/jc/jumpserver/apps/assets/utils.py",
+				"/Users/Jhui/jc/jumpserver/docs/install.md",
+				"/Users/Jhui/jc/jumpserver/venv3/lib/python3.6/site-packages/django/conf/global_settings.py",
+				"/Users/Jhui/jc/jumpserver/config_example.py",
+				"/Users/Jhui/jc/jumpserver/apps/jumpserver/settings.py",
+				"/Users/Jhui/jc/jumpserver/apps/common/utils.py",
+				"/Users/Jhui/Downloads/deployweb.py",
 				"/Users/Jhui/jc/learning/learndeploy.py",
-				"/Users/Jhui/jc/learning/learnbuild.py",
-				"/Users/Jhui/jc/learning/learn_deploy.py",
-				"/Users/Jhui/java/apache-maven-3.5.0/conf/settings.xml",
-				"/Users/Jhui/Downloads/settings.xml",
-				"/Users/Jhui/Downloads/Lepus_v3.8_beta/php/index.php",
-				"/Users/Jhui/qccr/crywgl/settings/common.py",
-				"/Users/Jhui/qccr/crywgl/crywgl/urls.py",
-				"/Users/Jhui/qccr/crywgl/apps/homepage/urls.py",
-				"/Users/Jhui/qccr/tconfig/service/auth/auth_service.py",
-				"/Users/Jhui/qccr/tconfig/apps/config/views.py",
-				"/Users/Jhui/qccr/crywgl/apps/account/views.py",
+				"/Users/Jhui/jc/learndeploy.py",
+				"/Users/Jhui/jc/deploy.py",
+				"/Users/Jhui/jc/soft/nginx/conf/vhost/jcy.conf",
+				"/Users/Jhui/jc/soft/nginx/conf/nginx.conf",
+				"/Users/Jhui/jc/shop/api.py",
+				"/Users/Jhui/qccr/nginx/conf/vhosts/ikeeper.conf",
+				"/Users/Jhui/qccr/nginx/conf/vhosts/tkeeper.conf",
+				"/Users/Jhui/qccr/nginx/conf/vhosts/tconfig.conf",
+				"/Users/Jhui/qccr/crywgl/static/dist/js/pages/dashboard.js",
+				"/Users/Jhui/.shuttle.json",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/statistic.js",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/tab_statistic.html",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/release_index.html",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/records_statistic.html",
+				"/Users/Jhui/qccr/crywgl/apps/releasemanage/views.py",
+				"/Users/Jhui/qccr/crywgl/static/plugins/datetimepicker/bootstrap-datetimepicker.css",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/middleware_manage.js",
+				"/Users/Jhui/qccr/crywgl/service/common/http/pjax.py",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/release_base.html",
+				"/Users/Jhui/qccr/crywgl/templates/base.html",
+				"/Users/Jhui/qccr/crywgl/static/js/main.js",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/release_manage.js",
+				"/Users/Jhui/qccr/crywgl/static/plugins/myloading/my_loading.js",
+				"/Users/Jhui/qccr/crywgl/static/js/jquery.pjax.js",
+				"/Users/Jhui/qccr/crywgl/static/js/base.js",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/project_list.js",
+				"/Users/Jhui/qccr/crywgl/static/js/myqccr.js",
+				"/Users/Jhui/qccr/techapi-统一接口管理中心/templates/index.html",
+				"/Users/Jhui/qccr/tkeeper/webpack.config.js",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/environment_module_list.html",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/AutoFileName/autofilename.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/User/Markdown.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+				"/Users/Jhui/qccr/crywgl/apps/releasemanage/urls.py",
+				"/Users/Jhui/qccr/crywgl/uwsgi.ini",
+				"/Users/Jhui/qccr/tkeeper/uwsgi.ini",
+				"/Users/Jhui/qccr/crywgl/crywgl/wsgi.py",
+				"/Users/Jhui/qccr/crywgl/templates/myworkflowjob/handle_job.html",
+				"/Users/Jhui/qccr/crywgl/apps/account/templatetags/account_filter.py",
+				"/Users/Jhui/qccr/crywgl/templates/configurationmanage/module_flag_list.html",
+				"/Users/Jhui/qccr/nginx/conf/temp/www.conf",
+				"/Users/Jhui/jc/cmdb/apps/account/templatetags/myfilter.py",
+				"/Users/Jhui/jc/cmdb/apps/account/templatetags/__init__.py",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base.html",
+				"/Users/Jhui/jc/cmdb/apps/account/templatetags",
+				"/Users/Jhui/jc/cmdb/web/static/css/base.css",
+				"/Users/Jhui/jc/cmdb/web/static/js/base.js",
+				"/Users/Jhui/jc/cmdb/web/static/AdminLTE/css/skins/skin-green-light.min.css",
+				"/Users/Jhui/jc/cmdb/webpack.config.js",
+				"/Users/Jhui/jc/cmdb/requirements/common.txt",
+				"/Users/Jhui/jc/cmdb/settings/dev.py",
+				"/Users/Jhui/jc/cmdb/settings/common.py",
+				"/Users/Jhui/jc/cmdb/.gitignore",
+				"/Users/Jhui/jc/cmdb/settings/test.py",
+				"/Users/Jhui/jc/cmdb/web/template/hardware/circuit.html",
+				"/Users/Jhui/jc/cmdb/web/static/js/hardware/circuit.js",
+				"/Users/Jhui/jc/cmdb/apps/hardware/models.py",
+				"/Users/Jhui/jc/cmdb/apps/hardware/ajax.py",
+				"/Users/Jhui/jc/cmdb/service/hardware/circuit_service.py",
+				"/Users/Jhui/jc/cmdb/apps/hardware/urls.py",
+				"/Users/Jhui/jc/cmdb/cmdb/urls.py",
+				"/Users/Jhui/jc/cmdb/apps/hardware/views.py",
+				"/Users/Jhui/jc/cmdb/service/common/response.py",
+				"/Users/Jhui/qccr/crywgl/apps/releasemanage/models.py",
 				"/Users/Jhui/qccr/crywgl/apps/account/models.py",
+				"/Users/Jhui/qccr/crywgl/service/common/auto_log.py",
+				"/Users/Jhui/qccr/crywgl/settings/dev.py",
+				"/Users/Jhui/qccr/crywgl/crywgl/urls.py",
+				"/Users/Jhui/qccr/tconfig/static/js/lib.js",
+				"/Users/Jhui/qccr/tkeeper/settings/common.py",
+				"/Users/Jhui/qccr/tconfig/service/base_service.py",
+				"/Users/Jhui/qccr/crywgl/templates/404.html",
 				"/Users/Jhui/qccr/crywgl/service/account/account_service.py",
-				"/Users/Jhui/qccr/crywgl/service/account/account_request_service.py",
-				"/Users/Jhui/project/hrjia/hrjia-wechat/app/basic/basic_wechat.py",
-				"/Users/Jhui/Mac/developer/rationale/network/sys.md",
-				"/Users/Jhui/Mac/developer/rationale/network/知识点-网络层次架构.md",
-				"/Users/Jhui/Mac/developer/rationale/algorithm/算法&&数据结构.md",
-				"/Users/Jhui/Mac/developer/Interview.md",
-				"/Users/Jhui/Mac/developer/re.md",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/singleton.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/pyInterview.md",
-				"/Users/Jhui/Mac/developer/programming language/Python/pyFramework.md",
-				"/Users/Jhui/Mac/developer/E/Docker.md",
-				"/Users/Jhui/project/pyframe/prodjango/prodjango/settings.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/werkzeug/http.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/core/handlers/base.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/core/handlers/wsgi.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/core/wsgi.py",
-				"/Users/Jhui/python/cpython/Lib/wsgiref/handlers.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/core/signing.py",
-				"/Users/Jhui/python/cpython/Doc/library/http.rst",
-				"/Users/Jhui/Mac/developer/E/Kubernetes.md",
-				"/Users/Jhui/Mac/developer/E/Nginx.conf",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/__init__.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/utils/deprecation.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/urls/base.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/django/core/servers/basehttp.py",
-				"/Users/Jhui/project/pyframe/proflask/manage.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/werkzeug/__init__.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/flask/app.py",
-				"/Users/Jhui/project/pyframe/venv/lib/python2.7/site-packages/flask/helpers.py",
-				"/Users/Jhui/project/pyframe/requirement.txt",
-				"/Users/Jhui/project/pyframe/protornado/manage.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/apicenter/apis.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/apicenter/serializers.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/tasks.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/settings/dev.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/apicenter/views.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/apicenter/models.py",
-				"/Users/Jhui/qccr/techapi-统一接口管理中心/proxy/src/auth.py",
-				"/Users/Jhui/qccr/crywgl/service/releasemanage/environment_service.py",
-				"/Users/Jhui/Mac/developer/rationale/quickSort.py",
-				"/Users/Jhui/Mac/developer/rationale/insertSort.py",
-				"/Users/Jhui/Mac/developer/rationale/算法&&数据结构.md",
-				"/Users/Jhui/Mac/developer/rationale/shellSort.py",
-				"/Users/Jhui/Mac/developer/rationale/fib.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/Python-Review.md",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/newclass.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/metaclass_01.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/metaclass_02.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/pySourcecode.md",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/child.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/foo.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/py/Interview/variable.py",
-				"/Users/Jhui/Mac/developer/programming language/Python/pyEnv.md",
-				"/Users/Jhui/Mac/developer/programming language/Python/Python-Books.md",
-				"/Users/Jhui/Mac/developer/programming language/Python/Python-八大排序.md",
-				"/Users/Jhui/Mac/hawk/programming language/Python/pyInterview.md",
-				"/Users/Jhui/Mac/hawk/programming language/Python/Python-框架.md",
-				"/Users/Jhui/Mac/hawk/programming language/Python/Python-环境.md",
-				"/Users/Jhui/Mac/hawk/programming language/Python/Python-Review.md",
-				"/Users/Jhui/Downloads/elastic-job-2.0.5/elastic-job-common/elastic-job-common-restful/src/main/java/com/dangdang/ddframe/job/restful/GsonJsonProvider.java",
-				"/Users/Jhui/tes.py",
-				"/Users/Jhui/Mac/hawk/L/Python/py/Interview/metaclass_02.py",
-				"/Users/Jhui/Mac/hawk/L/Python/py/Interview/metaclass_01.py",
-				"/Users/Jhui/Mac/hawk/L/Python/pyInterview.md",
-				"/Users/Jhui/Mac/hawk/L/Python/Python-Review.md",
-				"/Users/Jhui/Mac/hawk/B/算法&&数据结构",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/gc2.py",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/gc1.py",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/gc3.py",
-				"/Users/Jhui/Mac/index.html",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/pyc_generator.py",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/demo.py",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/ch01.py",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/SublimeTmpl/Main.sublime-menu",
-				"/Users/Jhui/Mac/hawk/L/Python/py/CodeAnalyse/ch00.py",
-				"/Users/Jhui/python/cpython/Python/import.c",
-				"/Users/Jhui/python/cpython/Objects/longobject.c",
-				"/Users/Jhui/Mac/hawk/L/知识点-编程语言类型.md",
-				"/Users/Jhui/python/cpython/Include/floatobject.h",
-				"/Users/Jhui/python/cpython/Include/longintrepr.h",
-				"/Users/Jhui/python/cpython/Include/listobject.h",
-				"/Users/Jhui/python/cpython/Objects/clinic/longobject.c.h",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/User/Markdown.sublime-settings",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/MarkdownEditing/Markdown.sublime-settings",
-				"/Users/Jhui/Mac/hawk/L/Python/Py源码剖析.md",
-				"/Users/Jhui/python/cpython/Include/object.h",
-				"/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/include/python2.7/object.h",
-				"/Users/Jhui/Desktop/屏幕快照 2017-05-02 14.19.06.png",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/MarkdownEditing/MultiMarkdown.sublime-settings",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/User/Terminal.sublime-settings",
-				"/Users/Jhui/Library/Application Support/Sublime Text 3/Packages/User/Package Control.sublime-settings",
-				"/Users/Jhui/Mac/hawk/L/Python/Python.md",
-				"/usr/local/Cellar/python3/3.6.0_1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/Python.h",
-				"/usr/local/Cellar/python3/3.6.0_1/Frameworks/Python.framework/Versions/3.6/include/python3.6m/pythonrun.h",
-				"/usr/local/Cellar/python/2.7.13/Frameworks/Python.framework/Versions/2.7/Python",
-				"/Users/Jhui/Mac/hawk/L/Python/Python-框架.md",
-				"/Users/Jhui/Mac/hawk/L/Python/Python-库.md",
-				"/Users/Jhui/Mac/hawk/L/Python/Python-Books.md",
-				"/Users/Jhui/Mac/hawk/L/Python/Python-环境.md",
-				"/Users/Jhui/demo/flask-press/manage.py",
-				"/Users/Jhui/demo/venv/lib/python2.7/site-packages/flask/app.py",
-				"/Users/Jhui/demo/venv/lib/python2.7/site-packages/flask/helpers.py",
-				"/Users/Jhui/demo/README.md",
-				"/Users/Jhui/qccr/crywgl/templates/releasemanage/mail_release_failnotice.html",
-				"/Users/Jhui/qccr/crywgl/service/releasemanage/release_record_service.py",
-				"/Users/Jhui/qccr/crywgl/apps/releasemanage/api.py",
-				"/Users/Jhui/qccr/crywgl/templates/releasemanage/mail_steady_fail_module.html",
-				"/Users/Jhui/qccr/crywgl/templates/releasemanage/mail_release_notice.html",
-				"/Users/Jhui/qccr/crywgl/crrpc/tasks/distribute_steady_env.py"
+				"/Users/Jhui/qccr/tkeeper/static/js/lib.ts",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base_footer.html",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base_header.html",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base_sidebar.html",
+				"/Users/Jhui/deploy.sh",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+				"/Users/Jhui/jc/shop/deploy.py",
+				"/Users/Jhui/jc/manage.py"
 			],
 			"find":
 			{
-				"height": 24.0
+				"height": 23.0
 			},
 			"find_in_files":
 			{
@@ -475,134 +207,75 @@
 				"case_sensitive": false,
 				"find_history":
 				[
-					"qccr_login",
-					"index",
-					"auth",
-					"request_class",
-					"get_response",
-					"WSGIHandler",
-					"force_str",
-					"base64",
-					"Use Proxy",
-					"401",
-					"set_script_prefix",
-					"wsgiref",
-					"simple_server",
-					"wsgiref",
-					"autocomplete",
-					"ManagementUtility",
-					"wsgi",
-					"WSGIRequest",
-					"ManagementUtility",
-					"period_map_open",
-					"validate_frequency",
-					"validate_private_frequency",
-					"validate_frequency",
-					"period_map_open",
-					"redis_connection",
-					"day_limit",
-					"AggregatedRecordSerializer",
-					"RetrieveUpdateAPIView",
-					"MyAPIRetrieveUpdate",
-					"do_release",
-					"fib",
-					"compile",
-					"decorator",
-					"deco",
-					"de",
-					"decorater",
-					"闭包",
-					"本地作用域（Local）→当前作用域被嵌入的本地作用域（Enclosing locals）→全局/模块作用域（Global）→内置作用域（Built-in）",
-					"闭包",
-					"addButtons",
-					"ReconnectingWebSocket",
-					"start_job",
-					"Channels",
-					"channels",
-					"livecheck",
-					"staticmethod",
-					"装饰器",
-					"类",
-					"魔法方法、属性和迭代器",
-					"Code对象与pyc文件",
-					"Python对象初探",
-					"垃圾回收机制",
-					"Python虚拟机",
-					"wfile",
-					"MAGIC",
-					"运行",
-					"运行过程",
-					"PyInt_Type",
-					"PyInt",
-					"_typeobject",
-					"PyObject",
-					"PyObject_HEAD",
-					"_typeobject",
-					"PyObject_VAR_HEAD",
-					"PyObject_HEAD",
-					"_PyObject_HEAD_EXTRA",
-					"interpreter",
-					"代码格式风格",
-					"_PackageBoundObject",
-					"send_email_release_failure",
-					"title",
-					"send_ding",
-					"objects.raw",
-					"raw",
-					"get_project_env",
-					"/api/get_project_env",
-					"crywgl/releasemanage/api/get_project_env",
-					"module_mail_list",
-					"module_mail_lis",
-					"send_ding",
-					"send_diing",
-					"send_ting",
-					"ModuleRestartRecord",
-					"email_list",
-					"send_html_mail",
-					"loader",
-					"send_dingtalk_msg",
-					"RotaService",
-					"QUEUE_RELEASE",
-					"CeleryManageService",
-					"CommonService",
-					"HTML_INDEX",
-					"ModuleService",
-					"MyUser",
-					"after_smsg_task",
-					"QUEUE_RELEASE",
-					"CeleryManageService",
-					"loader",
-					"send_html_mail",
-					"loader",
-					"ding_list_str",
-					"send_dingtalk_msg",
-					"send_html_mail",
-					"send_dingtalk_msg",
-					"ModuleRestartRecord",
-					"EnvironmentReleaseRecord",
-					"RotaService",
-					"QUEUE_LOCAL",
-					"send_dingtalk_msg",
-					"send_dingtalk",
-					"send_dingtalk_pro",
-					"send_ding",
-					"ding",
-					"chain",
-					"chaain",
-					"query_rota_types",
-					"send_dingtalk_msg",
-					"restart_records",
-					"check_restart_task",
-					"group_module_list",
-					"my_release_all",
-					"restart_module.a",
-					"restart_module",
-					"my_release_all",
-					"chain",
-					"send_ding",
-					"do_release",
-					"pre"
+					"send_mail",
+					"sendmail",
+					"private_key_file",
+					"ENV_CHOICES",
+					"Testing",
+					"send_mail_async",
+					"send_mail_sync",
+					"EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'",
+					"EMAIL_HOST_PASSWORD",
+					"EMAIL_HOST_PASSWORD\n",
+					"EMAIL_HOST_USER",
+					"send_mail_async",
+					"send_mail",
+					"send_mail_async",
+					"mail",
+					"EMAIL_HOST_PASSWORD",
+					"sign_t",
+					"user_add_success_next",
+					"UserCreateView",
+					"user/create",
+					"users/user/create",
+					"users/user",
+					"DevelopmentConfig",
+					"REDIS_PASSWORD",
+					"-rw-r--r-- 1 root root",
+					"-rw-r----- 1 jcy jcy",
+					"dashboard",
+					"wysihtml5",
+					"bootstrap3",
+					"bootstrap-wysihtml5",
+					"bootstrap-wysiwyg",
+					"datepicker",
+					"records_statistic.html",
+					"tab_statistic.html",
+					"tab_satic",
+					"statistic",
+					"datetimepicker",
+					"onet",
+					"RequestContext",
+					"context_instance",
+					"pjax",
+					"subcontent",
+					"apply_hash_action",
+					"my_loading",
+					"pjax",
+					"main.js",
+					"pjax",
+					"tab",
+					"add_version",
+					"account_filter",
+					"mem",
+					"alert",
+					"ErrorResponse",
+					"show-addbutton-modal-temp",
+					"show-addbutton-modal",
+					"ERROR_LOG_LIMIT",
+					"perf_track",
+					"BaseUserManager",
+					"middleware",
+					"ENVIRONMENT_FLAG",
+					"USE_STATE",
+					"404.html",
+					"STATICFILES_FINDERS",
+					"404",
+					"my_ajax",
+					"initMiddlewareFlagTable",
+					"show_editbutton_modal_temp",
+					"configFunc",
+					"hostname"
 				],
 				"highlight": true,
 				"in_selection": false,
@@ -610,6 +283,7 @@
 				"regex": false,
 				"replace_history":
 				[
+					""
 				],
 				"reverse": false,
 				"show_context": true,
@@ -619,29 +293,25 @@
 			},
 			"incremental_find":
 			{
-				"height": 24.0
+				"height": 23.0
 			},
 			"input":
 			{
-				"height": 32.0
+				"height": 31.0
 			},
 			"menu_visible": true,
+			"output.doc":
+			{
+				"height": 0.0
+			},
 			"output.find_results":
 			{
 				"height": 0.0
 			},
-			"output.git":
-			{
-				"height": 106.0
-			},
-			"output.markdown":
-			{
-				"height": 106.0
-			},
 			"pinned_build_system": "",
 			"replace":
 			{
-				"height": 44.0
+				"height": 42.0
 			},
 			"save_all_on_build": true,
 			"select_file":
@@ -651,172 +321,60 @@
 				"selected_items":
 				[
 					[
-						"singleton",
-						"developer/programming language/Python/py/Interview/singleton.py"
+						"utils.py",
+						"apps/assets/utils.py"
 					],
 					[
-						"wsgihandler",
-						"python/cpython/Lib/wsgiref/handlers.py"
+						"config",
+						"config_example.py"
 					],
 					[
-						"signing",
-						"pyframe/venv/lib/python2.7/site-packages/django/core/signing.py"
-					],
-					[
-						"werkzeug",
-						"venv/lib/python2.7/site-packages/werkzeug/__init__.py"
-					],
-					[
-						"navmenu",
-						"static/src/components/mconfig/navmenu.vue"
-					],
-					[
-						"impor",
-						"cpython/Python/import.c"
-					],
-					[
-						"object.c",
-						"cpython/Objects/longobject.c"
-					],
-					[
-						"object.h",
-						"cpython/Objects/clinic/longobject.c.h"
-					],
-					[
-						"ob",
-						"cpython/Include/object.h"
-					],
-					[
-						"mail_release_failnotice",
-						"templates/releasemanage/mail_release_failnotice.html"
-					],
-					[
-						"mail",
-						"templates/releasemanage/mail_release_failnotice.html"
-					],
-					[
-						"mail_release_notice",
-						"templates/releasemanage/mail_release_notice.html"
-					],
-					[
-						"cron_release",
-						"script/cron_release.py"
-					],
-					[
-						"comm",
-						"service/common/common_service.py"
-					],
-					[
-						"module_release_detail_log",
-						"templates/releasemanage/module_release_detail_log.html"
-					],
-					[
-						"loglive.js",
-						"static/js/releasemanage/loglive.js"
-					],
-					[
-						"environment_module_loglive",
-						"templates/releasemanage/environment_module_loglive.html"
-					],
-					[
-						"middleware_",
-						"templates/releasemanage/tab_middleware_list.html"
-					],
-					[
-						"read",
-						"README.md"
-					],
-					[
-						"settings/",
-						"settings/dev.py"
-					],
-					[
-						"middlewareservice",
-						"service/releasemanage/middleware_service.py"
-					],
-					[
-						"steady/view",
-						"apps/releasemanage/steady/views.py"
-					],
-					[
-						"releasemodule",
-						"service/releasemanage/release_module.py"
-					],
-					[
-						"module_service",
-						"service/releasemanage/module_service.py"
-					],
-					[
-						"middleware_ser",
-						"service/releasemanage/middleware_service.py"
-					],
-					[
-						"middleware/ur",
-						"apps/releasemanage/middleware/urls.py"
-					],
-					[
-						"r",
-						"README.md"
-					],
-					[
-						"readme",
-						"README.md"
-					],
-					[
-						"rollback_detail",
-						"templates/releasemanage/rollback_detail.html"
-					],
-					[
-						"setting",
-						"crywgl/settings.py"
-					],
-					[
-						"midd",
-						"service/releasemanage/middleware_service.py"
-					],
-					[
-						"server",
-						"service/releasemanage/server_service.py"
+						"statistic",
+						"crywgl/static/js/releasemanage/statistic.js"
 					],
 					[
 						"middleware_manage",
-						"static/js/releasemanage/middleware_manage.js"
+						"crywgl/static/js/releasemanage/middleware_manage.js"
 					],
 					[
-						"middleware_list",
-						"templates/releasemanage/middleware/middleware_list.html"
+						"my_loading",
+						"crywgl/static/plugins/myloading/my_loading.js"
 					],
 					[
-						"404",
-						"templates/404.html"
+						"base",
+						"crywgl/templates/base.html"
 					],
 					[
-						"man",
-						"selfmaker/manage.py"
+						"base.js",
+						"crywgl/static/js/base.js"
 					],
 					[
-						"mang",
-						"selfmaker/manage.py"
+						"jquery.pjax.js",
+						"crywgl/static/js/jquery.pjax.js"
 					],
 					[
-						"",
-						"vuejs-python/flask-vue/empty.py"
+						"project_list",
+						"crywgl/static/js/releasemanage/project_list.js"
 					],
 					[
-						"inide",
-						"hrjia/hrjia-web-flask/resume/views/indiv_invite_end.html"
+						"release_index",
+						"crywgl/templates/releasemanage/release_index.html"
+					],
+					[
+						"404.html",
+						"crywgl/templates/404.html"
 					]
 				],
 				"width": 0.0
 			},
 			"select_project":
 			{
-				"height": 500.0,
+				"height": 0.0,
 				"last_filter": "",
 				"selected_items":
 				[
 				],
-				"width": 380.0
+				"width": 0.0
 			},
 			"select_symbol":
 			{
@@ -828,28 +386,693 @@
 				"width": 0.0
 			},
 			"show_minimap": true,
-			"show_open_files": false,
+			"show_open_files": true,
 			"show_tabs": true,
 			"side_bar_visible": true,
-			"side_bar_width": 208.0,
+			"side_bar_width": 326.0,
 			"status_bar_visible": true,
 			"template_settings":
 			{
 			}
 		},
-		"new_window_width": 973.0
+		"new_window_width": 1172.0
 	},
 	"windows":
 	[
+		{
+			"auto_complete":
+			{
+				"selected_items":
+				[
+					[
+						"sy",
+						"system〔function〕"
+					],
+					[
+						"cir",
+						"circuit_view"
+					],
+					[
+						"op",
+						"option\tTag"
+					],
+					[
+						"req",
+						"request"
+					],
+					[
+						"depl",
+						"deploy_web〔function〕"
+					]
+				]
+			},
+			"buffers":
+			[
+				{
+					"file": "/Users/Jhui/jc/jumpserver/config.py",
+					"settings":
+					{
+						"buffer_size": 4418,
+						"encoding": "UTF-8",
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/Users/Jhui/jc/jumpserver/Dockerfile",
+					"settings":
+					{
+						"buffer_size": 1331,
+						"line_ending": "Unix"
+					}
+				}
+			],
+			"build_system": "",
+			"build_system_choices":
+			[
+			],
+			"build_varint": "",
+			"command_palette":
+			{
+				"height": 392.0,
+				"last_filter": "setting",
+				"selected_items":
+				[
+					[
+						"setting",
+						"Preferences: Package Control Settings – Default"
+					],
+					[
+						"install",
+						"Install Package Control"
+					]
+				],
+				"width": 593.0
+			},
+			"console":
+			{
+				"height": 0.0,
+				"history":
+				[
+				]
+			},
+			"distraction_free":
+			{
+				"menu_visible": true,
+				"show_minimap": false,
+				"show_open_files": false,
+				"show_tabs": false,
+				"side_bar_visible": false,
+				"status_bar_visible": false
+			},
+			"expanded_folders":
+			[
+				"/Users/Jhui/jc/jumpserver"
+			],
+			"file_history":
+			[
+				"/Users/Jhui/jc/jumpserver/apps/common/tasks.py",
+				"/Users/Jhui/jc/jumpserver/apps/assets/models/asset.py",
+				"/Users/Jhui/Downloads/deploypre.py",
+				"/Users/Jhui/Downloads/deploypro.py",
+				"/Users/Jhui/Downloads/deploypr",
+				"/Users/Jhui/jc/shop/web.py",
+				"/Users/Jhui/jc/shop/fun.sql",
+				"/Users/Jhui/jc/jumpserver/config.py",
+				"/Users/Jhui/jc/jumpserver/apps/users/utils.py",
+				"/Users/Jhui/jc/jumpserver/apps/users/urls/views_urls.py",
+				"/Users/Jhui/jc/jumpserver/apps/assets/utils.py",
+				"/Users/Jhui/jc/jumpserver/docs/install.md",
+				"/Users/Jhui/jc/jumpserver/venv3/lib/python3.6/site-packages/django/conf/global_settings.py",
+				"/Users/Jhui/jc/jumpserver/config_example.py",
+				"/Users/Jhui/jc/jumpserver/apps/jumpserver/settings.py",
+				"/Users/Jhui/jc/jumpserver/apps/common/utils.py",
+				"/Users/Jhui/Downloads/deployweb.py",
+				"/Users/Jhui/jc/learning/learndeploy.py",
+				"/Users/Jhui/jc/learndeploy.py",
+				"/Users/Jhui/jc/deploy.py",
+				"/Users/Jhui/jc/soft/nginx/conf/vhost/jcy.conf",
+				"/Users/Jhui/jc/soft/nginx/conf/nginx.conf",
+				"/Users/Jhui/jc/shop/api.py",
+				"/Users/Jhui/qccr/nginx/conf/vhosts/ikeeper.conf",
+				"/Users/Jhui/qccr/nginx/conf/vhosts/tkeeper.conf",
+				"/Users/Jhui/qccr/nginx/conf/vhosts/tconfig.conf",
+				"/Users/Jhui/qccr/crywgl/static/dist/js/pages/dashboard.js",
+				"/Users/Jhui/.shuttle.json",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/statistic.js",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/tab_statistic.html",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/release_index.html",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/records_statistic.html",
+				"/Users/Jhui/qccr/crywgl/apps/releasemanage/views.py",
+				"/Users/Jhui/qccr/crywgl/static/plugins/datetimepicker/bootstrap-datetimepicker.css",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/middleware_manage.js",
+				"/Users/Jhui/qccr/crywgl/service/common/http/pjax.py",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/release_base.html",
+				"/Users/Jhui/qccr/crywgl/templates/base.html",
+				"/Users/Jhui/qccr/crywgl/static/js/main.js",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/release_manage.js",
+				"/Users/Jhui/qccr/crywgl/static/plugins/myloading/my_loading.js",
+				"/Users/Jhui/qccr/crywgl/static/js/jquery.pjax.js",
+				"/Users/Jhui/qccr/crywgl/static/js/base.js",
+				"/Users/Jhui/qccr/crywgl/static/js/releasemanage/project_list.js",
+				"/Users/Jhui/qccr/crywgl/static/js/myqccr.js",
+				"/Users/Jhui/qccr/techapi-统一接口管理中心/templates/index.html",
+				"/Users/Jhui/qccr/tkeeper/webpack.config.js",
+				"/Users/Jhui/qccr/crywgl/templates/releasemanage/environment_module_list.html",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/Package Control/Package Control.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/AutoFileName/autofilename.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/User/Markdown.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/User/Package Control.sublime-settings",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/User/Terminal.sublime-settings",
+				"/Users/Jhui/qccr/crywgl/apps/releasemanage/urls.py",
+				"/Users/Jhui/qccr/crywgl/uwsgi.ini",
+				"/Users/Jhui/qccr/tkeeper/uwsgi.ini",
+				"/Users/Jhui/qccr/crywgl/crywgl/wsgi.py",
+				"/Users/Jhui/qccr/crywgl/templates/myworkflowjob/handle_job.html",
+				"/Users/Jhui/qccr/crywgl/apps/account/templatetags/account_filter.py",
+				"/Users/Jhui/qccr/crywgl/templates/configurationmanage/module_flag_list.html",
+				"/Users/Jhui/qccr/nginx/conf/temp/www.conf",
+				"/Users/Jhui/jc/cmdb/apps/account/templatetags/myfilter.py",
+				"/Users/Jhui/jc/cmdb/apps/account/templatetags/__init__.py",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base.html",
+				"/Users/Jhui/jc/cmdb/apps/account/templatetags",
+				"/Users/Jhui/jc/cmdb/web/static/css/base.css",
+				"/Users/Jhui/jc/cmdb/web/static/js/base.js",
+				"/Users/Jhui/jc/cmdb/web/static/AdminLTE/css/skins/skin-green-light.min.css",
+				"/Users/Jhui/jc/cmdb/webpack.config.js",
+				"/Users/Jhui/jc/cmdb/requirements/common.txt",
+				"/Users/Jhui/jc/cmdb/settings/dev.py",
+				"/Users/Jhui/jc/cmdb/settings/common.py",
+				"/Users/Jhui/jc/cmdb/.gitignore",
+				"/Users/Jhui/jc/cmdb/settings/test.py",
+				"/Users/Jhui/jc/cmdb/web/template/hardware/circuit.html",
+				"/Users/Jhui/jc/cmdb/web/static/js/hardware/circuit.js",
+				"/Users/Jhui/jc/cmdb/apps/hardware/models.py",
+				"/Users/Jhui/jc/cmdb/apps/hardware/ajax.py",
+				"/Users/Jhui/jc/cmdb/service/hardware/circuit_service.py",
+				"/Users/Jhui/jc/cmdb/apps/hardware/urls.py",
+				"/Users/Jhui/jc/cmdb/cmdb/urls.py",
+				"/Users/Jhui/jc/cmdb/apps/hardware/views.py",
+				"/Users/Jhui/jc/cmdb/service/common/response.py",
+				"/Users/Jhui/qccr/crywgl/apps/releasemanage/models.py",
+				"/Users/Jhui/qccr/crywgl/apps/account/models.py",
+				"/Users/Jhui/qccr/crywgl/service/common/auto_log.py",
+				"/Users/Jhui/qccr/crywgl/settings/dev.py",
+				"/Users/Jhui/qccr/crywgl/crywgl/urls.py",
+				"/Users/Jhui/qccr/tconfig/static/js/lib.js",
+				"/Users/Jhui/qccr/tkeeper/settings/common.py",
+				"/Users/Jhui/qccr/tconfig/service/base_service.py",
+				"/Users/Jhui/qccr/crywgl/templates/404.html",
+				"/Users/Jhui/qccr/crywgl/service/account/account_service.py",
+				"/Users/Jhui/qccr/tkeeper/static/js/lib.ts",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base_footer.html",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base_header.html",
+				"/Users/Jhui/jc/cmdb/web/template/layout/base_sidebar.html",
+				"/Users/Jhui/deploy.sh",
+				"/Users/Jhui/.dotfiles/sublime/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+				"/Users/Jhui/jc/shop/deploy.py",
+				"/Users/Jhui/jc/manage.py"
+			],
+			"find":
+			{
+				"height": 23.0
+			},
+			"find_in_files":
+			{
+				"height": 93.0,
+				"where_history":
+				[
+					""
+				]
+			},
+			"find_state":
+			{
+				"case_sensitive": false,
+				"find_history":
+				[
+					"send_mail",
+					"sendmail",
+					"private_key_file",
+					"ENV_CHOICES",
+					"Testing",
+					"send_mail_async",
+					"send_mail_sync",
+					"EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'",
+					"EMAIL_HOST_PASSWORD",
+					"EMAIL_HOST_PASSWORD\n",
+					"EMAIL_HOST_USER",
+					"send_mail_async",
+					"send_mail",
+					"send_mail_async",
+					"mail",
+					"EMAIL_HOST_PASSWORD",
+					"sign_t",
+					"user_add_success_next",
+					"UserCreateView",
+					"user/create",
+					"users/user/create",
+					"users/user",
+					"DevelopmentConfig",
+					"REDIS_PASSWORD",
+					"-rw-r--r-- 1 root root",
+					"-rw-r----- 1 jcy jcy",
+					"dashboard",
+					"wysihtml5",
+					"bootstrap3",
+					"bootstrap-wysihtml5",
+					"bootstrap-wysiwyg",
+					"datepicker",
+					"records_statistic.html",
+					"tab_statistic.html",
+					"tab_satic",
+					"statistic",
+					"datetimepicker",
+					"onet",
+					"RequestContext",
+					"context_instance",
+					"pjax",
+					"subcontent",
+					"apply_hash_action",
+					"my_loading",
+					"pjax",
+					"main.js",
+					"pjax",
+					"tab",
+					"add_version",
+					"account_filter",
+					"mem",
+					"alert",
+					"ErrorResponse",
+					"show-addbutton-modal-temp",
+					"show-addbutton-modal",
+					"ERROR_LOG_LIMIT",
+					"perf_track",
+					"BaseUserManager",
+					"middleware",
+					"ENVIRONMENT_FLAG",
+					"USE_STATE",
+					"404.html",
+					"STATICFILES_FINDERS",
+					"404",
+					"my_ajax",
+					"initMiddlewareFlagTable",
+					"show_editbutton_modal_temp",
+					"configFunc",
+					"hostname"
+				],
+				"highlight": true,
+				"in_selection": false,
+				"preserve_case": false,
+				"regex": false,
+				"replace_history":
+				[
+					""
+				],
+				"reverse": false,
+				"show_context": true,
+				"use_buffer2": true,
+				"whole_word": false,
+				"wrap": true
+			},
+			"folders":
+			[
+				{
+					"path": "/Users/Jhui/jc/jumpserver"
+				}
+			],
+			"groups":
+			[
+				{
+					"selected": 1,
+					"sheets":
+					[
+						{
+							"buffer": 0,
+							"file": "/Users/Jhui/jc/jumpserver/config.py",
+							"semi_transient": false,
+							"settings":
+							{
+								"buffer_size": 4418,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										4359,
+										4359
+									]
+								],
+								"settings":
+								{
+									"auto_complete": false,
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+											"1":
+											[
+												4395,
+												4396
+											]
+										},
+										"icon":
+										{
+											"1":
+											[
+												"Packages/BracketHighlighter/icons/curly_bracket.png",
+												"brackethighlighter.default"
+											]
+										},
+										"open":
+										{
+											"1":
+											[
+												4284,
+												4285
+											]
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content"
+									],
+									"git_gutter_enabled": true,
+									"syntax": "Packages/Python/Python.sublime-syntax",
+									"tab_size": 4,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 1636.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 1,
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/Users/Jhui/jc/jumpserver/Dockerfile",
+							"semi_transient": true,
+							"settings":
+							{
+								"buffer_size": 1331,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										569,
+										569
+									]
+								],
+								"settings":
+								{
+									"bracket_highlighter.busy": false,
+									"bracket_highlighter.locations":
+									{
+										"close":
+										{
+										},
+										"icon":
+										{
+										},
+										"open":
+										{
+										},
+										"unmatched":
+										{
+										}
+									},
+									"bracket_highlighter.regions":
+									[
+										"bh_square",
+										"bh_square_center",
+										"bh_square_open",
+										"bh_square_close",
+										"bh_square_content",
+										"bh_double_quote",
+										"bh_double_quote_center",
+										"bh_double_quote_open",
+										"bh_double_quote_close",
+										"bh_double_quote_content",
+										"bh_default",
+										"bh_default_center",
+										"bh_default_open",
+										"bh_default_close",
+										"bh_default_content",
+										"bh_c_define",
+										"bh_c_define_center",
+										"bh_c_define_open",
+										"bh_c_define_close",
+										"bh_c_define_content",
+										"bh_curly",
+										"bh_curly_center",
+										"bh_curly_open",
+										"bh_curly_close",
+										"bh_curly_content",
+										"bh_angle",
+										"bh_angle_center",
+										"bh_angle_open",
+										"bh_angle_close",
+										"bh_angle_content",
+										"bh_round",
+										"bh_round_center",
+										"bh_round_open",
+										"bh_round_close",
+										"bh_round_content",
+										"bh_regex",
+										"bh_regex_center",
+										"bh_regex_open",
+										"bh_regex_close",
+										"bh_regex_content",
+										"bh_tag",
+										"bh_tag_center",
+										"bh_tag_open",
+										"bh_tag_close",
+										"bh_tag_content",
+										"bh_single_quote",
+										"bh_single_quote_center",
+										"bh_single_quote_open",
+										"bh_single_quote_close",
+										"bh_single_quote_content",
+										"bh_unmatched",
+										"bh_unmatched_center",
+										"bh_unmatched_open",
+										"bh_unmatched_close",
+										"bh_unmatched_content"
+									],
+									"git_gutter_enabled": true,
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"stack_index": 0,
+							"type": "text"
+						}
+					]
+				}
+			],
+			"incremental_find":
+			{
+				"height": 23.0
+			},
+			"input":
+			{
+				"height": 31.0
+			},
+			"layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			},
+			"menu_visible": true,
+			"output.doc":
+			{
+				"height": 0.0
+			},
+			"output.find_results":
+			{
+				"height": 0.0
+			},
+			"pinned_build_system": "",
+			"position": "0 -405 910 1172 798 -445 900 1920 1057 ",
+			"project": "",
+			"replace":
+			{
+				"height": 42.0
+			},
+			"save_all_on_build": true,
+			"select_file":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+					[
+						"utils.py",
+						"apps/assets/utils.py"
+					],
+					[
+						"config",
+						"config_example.py"
+					],
+					[
+						"statistic",
+						"crywgl/static/js/releasemanage/statistic.js"
+					],
+					[
+						"middleware_manage",
+						"crywgl/static/js/releasemanage/middleware_manage.js"
+					],
+					[
+						"my_loading",
+						"crywgl/static/plugins/myloading/my_loading.js"
+					],
+					[
+						"base",
+						"crywgl/templates/base.html"
+					],
+					[
+						"base.js",
+						"crywgl/static/js/base.js"
+					],
+					[
+						"jquery.pjax.js",
+						"crywgl/static/js/jquery.pjax.js"
+					],
+					[
+						"project_list",
+						"crywgl/static/js/releasemanage/project_list.js"
+					],
+					[
+						"release_index",
+						"crywgl/templates/releasemanage/release_index.html"
+					],
+					[
+						"404.html",
+						"crywgl/templates/404.html"
+					]
+				],
+				"width": 0.0
+			},
+			"select_project":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"select_symbol":
+			{
+				"height": 0.0,
+				"last_filter": "",
+				"selected_items":
+				[
+				],
+				"width": 0.0
+			},
+			"selected_group": 0,
+			"settings":
+			{
+			},
+			"show_minimap": true,
+			"show_open_files": true,
+			"show_tabs": true,
+			"side_bar_visible": true,
+			"side_bar_width": 326.0,
+			"status_bar_visible": true,
+			"template_settings":
+			{
+			},
+			"window_id": 95,
+			"workspace_name": ""
+		}
 	],
 	"workspaces":
 	{
 		"recent_workspaces":
 		[
-			"/Users/Jhui/Documents/project.sublime-workspace",
-			"/Users/Jhui/Documents/crywgl.sublime-workspace",
-			"/Users/Jhui/Documents/tconfig.sublime-workspace",
-			"/Users/Jhui/Documents/tkeeper.sublime-workspace"
 		]
 	}
 }
