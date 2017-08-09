@@ -1,0 +1,38 @@
+用于打印当前系统相关信息(内核版本号、硬件架构、主机名称和操作系统类型)
+
+cat /proc/version
+
+语法
+uname (选项)
+
+选项
+    -a:全部信息
+    -m:电脑类型 x86_64
+    -n:网络上的主机名称
+    -r:系统发行编号
+    -s:名称
+    -v:版本
+    -p:处理器的类型
+    -i:硬件平台
+    -o:操作系统名称
+    --help:帮助
+    --version:版本信息
+
+
+
+知识点
+    CPU架构:
+        - CISC-复杂指令集计算机
+        x86(IA32), x86_64(AMD64)都属于x86,即intel的32位x86架构；->> IA-64架构尚未广泛应用；
+
+        - RISC-精简指令集计算机
+        IA32 : 32 bits Intel Architecture (32位带宽Intel构架)
+        IA64 : 64 bits Intel Architecture (64位带宽Intel构架)
+        i386 : Intel 386 ( 老的386机器，也泛指IA32体系的CPU)
+        i486 : Intel 486
+        i586 : Intel 586 ( Pentium, K6 级别CPU )
+        i686 : Intel 686 ( Pentium II, Pentium III , Pentim 4, K7 级别CPU )
+
+        [参考](http://blog.csdn.net/wyzxg/article/details/5027738)
+
+

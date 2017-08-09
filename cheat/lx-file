@@ -1,0 +1,41 @@
+
+# 查看当前目录下文件个数
+find ./ | wc -l
+
+# 删除日志
+rm *log
+find ./ -name "*log" -exec rm {};
+
+# 搜寻文件或目录
+find ./ -name "core*" | xargs file
+
+# 查找目标文件夹中是否有obj文件
+find ./ -name '*.o'
+
+# 递归当前目录及子目录删除所有.o文件
+find ./ -name "*.o" -exec rm {} \;
+
+
+find是实时查找，locate为文件系统建立索引数据库，查找更快，但要更新索引库
+# 查找包含string的路径
+locate string
+updatedb
+
+# 查看文件差别
+diff file1 file2
+
+# 查询文件内容, egrep=grep -E
+egrep 'socket' www.log
+
+
+# 递归修改文件属性
+chown -R tuxapp source/
+
+软链接和硬链接
+# 硬链接， 删除一个，仍能找到
+ln cc ccAgain
+# 软 ， 删除源，无法使用
+ln -s cc ccTo 
+
+查找log中包含AAA，但不包含BBB记录的总数
+cat -v record.log | grep AAA | grep -v BBB | wc -l

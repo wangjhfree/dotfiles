@@ -1,3 +1,23 @@
+
+# 常用命令
+
+```关闭端口为8080的进程
+netstat -anp|grep :8080|awk '{print $7}'|awk -F"/" '{print $1}'|xargs kill -9
+
+```
+
+```删除文件
+git rm -r -n --cached  */src/\*
+
+git rm -r --cached  */src/\*
+
+```
+
+```
+date -s "2007-08-03 14:15:00"
+```
+
+
 # HTTP性能测试工具wrk
 
 > 编译error

@@ -1,0 +1,14 @@
+## git
+
+
+```
+# 检查配置信息
+git config --list
+
+--system /usr/local/etc/gitconfig 或者/etc/gitconfig 系统配置
+--global /.config/git/config 或者~/.gitconfig 用户配置
+
+
+
+```
+

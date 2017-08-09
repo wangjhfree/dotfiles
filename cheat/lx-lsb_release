@@ -1,0 +1,12 @@
+LSB(Linux Standard Base), 显示LSB和特定版本的相关信息
+
+语法
+lsb_release (选项)
+
+选项
+    -a:全部信息
+    -v:版本
+    -i:发行版的id
+    -r:具体版本号
+    -c:发行版代号
+    -h:帮助

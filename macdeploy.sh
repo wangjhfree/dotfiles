@@ -1,17 +1,21 @@
 #!usr/bin/env bash
 
+PATH = '/Users/Jhui/'
+
+
 # git 地址
 Git clone https://github.com/wangjunh/dotfiles.git
 
+mv dotfiles .dotfiles
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-rm -rf .zshrc
 ln -s .dotfiles/zshrc .zshrc
-
 ln -s .dotfiles/aliases .aliases
 ln -s .dotfiles/exports .exports
+
+
 
 
 
@@ -54,3 +58,6 @@ nvm install v6.11.0
 
 # 显示隐藏文件
 defaults write com.apple.finder AppleShowAllFiles -boolean true ; killall Finder
+
+
+brew install unrar
