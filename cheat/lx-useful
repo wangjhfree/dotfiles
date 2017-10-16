@@ -1,0 +1,9 @@
+
+// 列出块设备，除了RAM外
+lsblk
+
+// 机器名、操作系统和内核详情 
+uname -a 
+
+// 设置主机名 
+hostnamectl set-hostname

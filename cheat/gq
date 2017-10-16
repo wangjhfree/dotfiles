@@ -8,7 +8,12 @@ git config --list
 --system /usr/local/etc/gitconfig 或者/etc/gitconfig 系统配置
 --global /.config/git/config 或者~/.gitconfig 用户配置
 
+# 设置
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 
+# 免 账号密码输入,缓存认证信息
+git config --global credential.helper store
 
 ```
 
