@@ -1,1 +1,256 @@
 http://man.linuxde.net/
+
+http://www.runoob.com/linux/linux-command-manual.html
+
+
+
+> 查看说明
+
+// 说明
+whatis command
+
+// 详细
+info command
+
+man 页面所属的分类标识
+    1. 用户可以操作的命令或者是可执行文件
+    2. 系统核心可调用的函数与工具等
+    3. 一些常用的函数与数据库
+    4. 设备文件的说明
+    5. 设置文件或者某些文件的格式
+    6. 游戏
+    7. 惯例与协议等。例如Linux标准文件系统、网络协议、ASCII码等内容说明
+    8. 系统管理员可用的管理条令
+    9. 与核相关的文件
+
+
+whatis 查看命令所在具体文档类别
+
+
+例子
+
+// 查看分类
+whatis printf
+
+// 分类3的帮助
+man 3 printf 
+
+// 关键字查询
+man -k keyword
+man -k GNOME config | grep 1
+
+> 查看路径
+
+// binary文件所在路径
+which command
+
+// 程序搜索路径
+whereis command
+
+
+
+     网络应用
+
+
+# CURL
+
+// 获取网页
+curl "www.baidu.com"
+
+// 保存网页
+-o 指定保存的网页名
+-O 自动设置网页名
+curl -o baidu.html "www.baidu.com"
+curl -O "www.baidu.com"
+
+// 网页重定向
+curl www.sina.com
+curl -L www.sina.com
+
+// 指定请求方式和传递参数
+curl -X GET "www.xxxx.com?param1=1"
+curl -X POST --header "Content-Type:application/json" --data "param1=1&param2=2" "www.xxxx.com"
+
+curl -X POST --data-urlencode "param1=1&param2=2" "www.xxxx.com"
+
+// 请求的详细信息
+curl -v "www.baidu.com"
+
+// 响应的头信息
+curl -i "www.baidu.com"
+curl -I "www.baidu.com" -只显示头
+
+// 指定客户端
+--user-agent "User Agent"
+
+
+    内核与模块管理
+
+# Linux Standard Base(LSB)，显示发行版本信息 
+```
+lsb_release
+    -v 显示版本信息
+    -i 显示发行版的id
+    -d 显示发行版的描述信息
+    -r 显示当前系统是发行版的具体版本号
+    -c 发行版代号
+    -a 显示上面的所有信息
+    -h 显示帮助信息
+```
+
+
+# 显示 Linux系统信息
+```
+uname
+    -a 显示全部信息
+    -m 显示电脑类型
+    -n 显示网络上的主机名称
+    -r 操作系统的发行编号
+    -s 操作系统的名称
+    -v 操作系统的版本
+    -p 输出处理器类型或者'unknown'
+    -i 输出硬件平台或'unknown'
+    -o 输出操作系统的名称
+    --help 帮助
+    --version 版本
+
+cat /etc/issue
+
+more /etc/release
+```
+知识点
+    CPU架构:
+        - CISC-复杂指令集计算机
+            x86(IA32), x86_64(AMD64)都属于x86,即intel的32位x86架构；->> IA-64架构尚未广泛应用；
+
+        - RISC-精简指令集计算机
+            IA32 : 32 bits Intel Architecture (32位带宽Intel构架)
+            IA64 : 64 bits Intel Architecture (64位带宽Intel构架)
+            i386 : Intel 386 ( 老的386机器，也泛指IA32体系的CPU )
+            i486 : Intel 486
+            i586 : Intel 586 ( Pentium, K6 级别CPU  )
+            i686 : Intel 686 ( Pentium II, Pentium III , Pentim 4, K7 级别CPU  )
+                                                                                                        [参考](http://blog.csdn.net/wyzxg/article/details/5027738)
+
+
+
+// 列出块设备，除了RAM外
+lsblk
+
+// 机器名、操作系统和内核详情 
+uname -a 
+
+// 设置主机名 
+hostnamectl set-hostname
+
+
+hostnamectl set-hostname
+
+
+ln -s /usr/local/jdk1.8.0_121/ java
+
+
+# jdk
+export JAVA_HOME=/usr/local/java
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+
+用户和工作组管理
+
+> useradd
+
+创建新的系统用户,保存在/etc/passwd
+
+```
+语法
+    useradd(选项)(参数)
+
+选项
+-c<备注>: 添加备注文字
+-d<登入目录>: 指定用户登入是的起始目录
+-e<有效期限>: 指定账号的有效期限
+-f<缓冲天数>: 指定密码过期的天数关闭账号
+-g<群组>: 指定用户所属的群组
+-G<群组>: 指定用户所属的附加群组
+-m: 自动建立用户的登入目录
+-M: 不要自动建立用户的登入目录
+-n: 取消建立以用户名称为名的群组
+-r: 建立系统账号
+-s<shell>: 指定用户登入后的shell
+-u<uid>: 指定用户id
+
+-D:变更预设值
+·
+参数 
+用户名: 要创建的用户名
+
+例子
+useradd -g sales jack -G company, employess 
+
+```
+
+> userdel
+
+删除系统用户
+
+```
+语法
+userdel(选项)(参数)
+
+选项
+-f: 强制删除用户，即使用户已登录
+-r: 删除用户同时，删除用户相关文件
+
+参数
+用户名: 要删除的
+
+```
+
+> usermod
+
+修改用户的基本信息(要确认user无执行动作)
+
+```
+语法
+usermod(选项)(参数)
+
+选项
+-c<备注>: 修改用户帐号的备注文字
+-d<登入目录>: 修改用户登入时的目录
+-e<有效期限>: 修改帐号的有效期限
+-f<缓冲天数>: 修改在密码过期后多少天即关闭该帐号
+-g<群组>: 修改用户所属的群组
+-G<群组>: 修改用户所属的附加群组
+-l<帐号名称>: 修改用户帐号名称
+-s: 修改用户登入后所使用的shell
+-u: 修改用户id
+-L: 锁定用户密码，使密码无效
+-U: 解除密码锁定
+
+```
+
+> groupadd
+
+创建一个新的工作组
+
+```
+语法
+groupadd(选项)(参数)
+
+选项
+    -g: 指定新建工作组的id
+    -r: 创建系统工作组
+    -K: 覆盖配置文件"/etc/login.defs"
+    -o: 允许添加组ID不唯一的工作组
+
+参数
+组名: 新建工作组
+
+```
+
+
+
+
+
+

@@ -1,0 +1,8 @@
+[distutils]
+index-servers = 
+    local
+
+[local]
+repository:http://10.0.30.65:3141
+username:wjh
+password:123
