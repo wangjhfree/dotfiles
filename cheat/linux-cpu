@@ -1,0 +1,19 @@
+# CPU负载
+
+cat /proc/cpuinfo #查看cpu信息
+
+uptime #查看系统负载
+	最后三列，即系统1分钟、5分钟、15分钟内的平均负载，判断一个系统负载是否偏高需要计算单核CPU的平均负载，等于这里uptime命令显示的系统平均负载 / CPU核数，一般以0.7为比较合适的值。偏高说明有比较多的进程在等待使用CPU资源。
+
+w #查看系统负载,top
+
+iostat #查看系统分区的IO使用情况
+
+　　　　tps: 每秒I/O传输请求量；
+　　　　kB_read/s：每秒读取多少KB；
+　　　　kB_wrtn/s：每秒写多少KB；
+　　　　kB_read：一共读了多少KB；
+　　　　kB_wrtn：一共写了多少KB。
+
+iotop #各进程的I/O情况
+

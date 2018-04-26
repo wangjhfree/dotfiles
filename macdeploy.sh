@@ -45,12 +45,6 @@ pip install virtualenv
 
 ln -s /Users/Jhui/.dotfiles/pip /Users/Jhui/.pip
 
-# sublime
-cp subl /usr/local/bin/
-rm -rf /Users/Jhui/Library/Application\ Support/Sublime\ Text\ 3
-ln -s /Users/Jhui/.dotfiles/sublime/Sublime\ Text\ 3 /Users/Jhui/Library/Application\ Support/Sublime\ Text\ 3
-
-
 # nodejs
 wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh
 nvm install v6.11.0

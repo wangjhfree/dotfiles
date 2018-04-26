@@ -1,0 +1,44 @@
+# 内存
+
+dmidecode -t memory #内存硬件查看
+
+cat /proc/meminfo #内存，free读取
+
+free -m/-h #内存整体使用情况
+
+ps aux | awk '{mem += $6} END {print mem/1024/1024}' #进程占用内存=free,used
+
+top #进程的消耗内存，按"shift+m"内存使用排序，按f键选择列的显示
+
+slabtop #内核态内存占用
+
+vmstat #内存的动态变化
+
+pmap -d 1 #查看共享内存空间
+
+sar #一个月内的内存是哟经
+
+
+# swap与memory
+
+
+读写速度 cpu > memory > swap > 磁盘
+
+物理内存: memory, RAM芯片组成;
+虚拟内存: swap, 磁盘代替;
+
+
+情景: 当内存memory不够的时候，被踢出的进程被暂时存储到交换区swap place
+
+问题: out of memory,
+
+#调整swap的使用率，sysctl -a | grep swappiness，vm.swappiness = 60
+cat /proc/sys/vm/swappiness
+
+  该参数可以从0-100进行设置。0就是最大限度使用内存，尽量不使用swap；100就是积极使用swap。这个具体的通过系统的算法进行确定。
+  计算公式, M = Amount of RAM in GB, and S = Amount of swap in GB, then If M < 2, S = M * 2 Else S = M + 2
+
+说明[http://blog.csdn.net/zwan0518/article/details/12059213]
+
+调参[http://www.cnblogs.com/Security-Darren/p/4685629.html]
+

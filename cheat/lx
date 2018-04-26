@@ -33,7 +33,7 @@ whatis 查看命令所在具体文档类别
 whatis printf
 
 // 分类3的帮助
-man 3 printf 
+man 3 printf
 
 // 关键字查询
 man -k keyword

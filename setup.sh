@@ -20,7 +20,6 @@ brew install wget
 # sshpass
 brew install http://git.io/sshpass.rb
 
-
 # Remove outdated versions from the cellar.
 brew cleanup
 

@@ -1,0 +1,10 @@
+// TCP连接资源，socket资源默认5000个，2MSL
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+
+
+// TIME_WAIT积累与端口耗尽问题 vi /etc/sysctl.conf 
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_fin_timeout = 30
+生效 /sbin/sysctl -p

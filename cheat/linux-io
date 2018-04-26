@@ -1,0 +1,18 @@
+# I/O 使用
+
+
+文件系统只读
+
+mount -o remount, rw /home #重新挂载改变/home分区读写
+
+
+磁盘满
+
+df -h #当前分区
+
+tune2fs -l /dev/vda1 | grep -i "block" #系统保留块，避免磁盘满用户无法登陆
+
+
+I节点不足
+
+df -i #查看I节点，文件量太大

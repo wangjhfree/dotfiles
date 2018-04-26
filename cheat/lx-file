@@ -26,6 +26,9 @@ find ./ -name "*log" -exec rm {};
 # 搜寻文件或目录
 find ./ -name "core*" | xargs file
 
+# 查找当前目录下包含搜索关键字的文件
+find .|xargs grep -ri "jcgroup" -l
+
 # 查找目标文件夹中是否有obj文件
 find ./ -name '*.o'
 
