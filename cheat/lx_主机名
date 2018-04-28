@@ -1,0 +1,11 @@
+# mac修改hostname
+
+sudo scutil --set HostName
+
+# centos
+
+hostnamectl set-hostname
+
+
+
+

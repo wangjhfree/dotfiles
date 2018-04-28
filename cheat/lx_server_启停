@@ -1,4 +1,4 @@
-	系统关机和重启
+系统关机和重启
 
 # Linux 系统启动过程
 
@@ -41,4 +41,3 @@ reboot 重启
 halt 关闭系统，等同 shutdown -h now 和 poweroff
 
 ```
-

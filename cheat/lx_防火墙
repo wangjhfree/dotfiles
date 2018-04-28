@@ -1,0 +1,29 @@
+# centos 7.2
+
+// 启动、停止、重启、开机关闭、状态防火墙
+systemctl start/stop/restart/disable/enable/status firewalld.service
+
+// 状态防火墙
+firewall-cmd --state
+
+// 查看开发端口
+firewall-cmd --list-ports
+
+// 开启端口，zone作用域，permanent永久生效
+firewall-cmd --zone=public --add-port=80/tcp --permanent
+
+# centos 6.5
+
+// 操作防火墙
+servcie iptables start/stop/restart/status
+
+// 永久开启、关闭防火墙
+chkconfig iptables on/off
+
+// 开启端口
+/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+/etc/rc.d/init.d/iptables save
+/etc/init.d/iptables restart
+
+
+

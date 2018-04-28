@@ -1,36 +1,18 @@
-# 文件属性
-
-文件类型 | 属主权限 | 属组权限 | 其他用户权限
-0          1 2 3      4 5 6      7 8 9
-d          r w x      r - x      r - x
-目录文件   读写执行
-
-# chmod 更改文件属性
-r:4
-w:2
-x:1
-
-# chgrp 更改文件属组
-chown -R root xx.xx
-
-# chown 更改文件属主
-chown -R root:root xx.xx
-
-# 查看当前目录下文件个数
+# 统计 当前目录下文件个数
 find ./ | wc -l
-
-# 删除日志
-rm *log
-find ./ -name "*log" -exec rm {};
 
 # 搜寻文件或目录
 find ./ -name "core*" | xargs file
 
-# 查找当前目录下包含搜索关键字的文件
+# 查找文件名-当前目录下包含搜索关键字
 find .|xargs grep -ri "jcgroup" -l
 
 # 查找目标文件夹中是否有obj文件
 find ./ -name '*.o'
+
+# 删除日志
+rm *log
+find ./ -name "*log" -exec rm {};
 
 # 递归当前目录及子目录删除所有.o文件
 find ./ -name "*.o" -exec rm {} \;
@@ -41,11 +23,16 @@ find是实时查找，locate为文件系统建立索引数据库，查找更快�
 locate string
 updatedb
 
+
+
 # 查看文件差别
 diff file1 file2
 
 # 查询文件内容, egrep=grep -E
 egrep 'socket' www.log
+
+grep -rn 'jcgroup'
+
 
 
 # 递归修改文件属性
@@ -55,7 +42,7 @@ chown -R tuxapp source/
 # 硬链接， 删除一个，仍能找到
 ln cc ccAgain
 # 软 ， 删除源，无法使用
-ln -s cc ccTo 
+ln -s cc ccTo
 
 查找log中包含AAA，但不包含BBB记录的总数
 cat -v record.log | grep AAA | grep -v BBB | wc -l

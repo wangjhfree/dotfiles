@@ -16,11 +16,10 @@ vmstat #内存的动态变化
 
 pmap -d 1 #查看共享内存空间
 
-sar #一个月内的内存是哟经
+sar #一个月内的内存
 
 
 # swap与memory
-
 
 读写速度 cpu > memory > swap > 磁盘
 
@@ -41,4 +40,3 @@ cat /proc/sys/vm/swappiness
 说明[http://blog.csdn.net/zwan0518/article/details/12059213]
 
 调参[http://www.cnblogs.com/Security-Darren/p/4685629.html]
-

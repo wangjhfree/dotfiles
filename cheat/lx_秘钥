@@ -1,0 +1,4 @@
+# 秘钥
+
+// 生成秘钥
+ssh-keygen -t rsa -C  "email@example.com"

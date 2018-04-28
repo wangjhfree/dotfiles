@@ -1,0 +1,15 @@
+
+# 删除远程文件
+
+// 查看
+git rm -r -n --cached 文件/文件夹名称
+
+// 删除
+git rm -r --cached 文件/文件夹名称
+
+// 提交
+git commit -m '说明'
+git push origin master
+
+
+
