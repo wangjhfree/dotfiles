@@ -100,3 +100,6 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 [ -s "/Users/Jhui/.nvm/nvm.sh" ] && . "/Users/Jhui/.nvm/nvm.sh" # This loads nvm
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
+
+export CHEATCOLORS=true
+
