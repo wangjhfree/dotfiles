@@ -100,6 +100,11 @@ export PATH=${PATH}:${MAVEN_HOME}/bin
 [ -s "/Users/Jhui/.nvm/nvm.sh" ] && . "/Users/Jhui/.nvm/nvm.sh" # This loads nvm
 export PATH="/usr/local/opt/openssl/bin:$PATH"
 
-
+# cheat
 export CHEATCOLORS=true
+
+# kubectl
+if [ $commands[kubectl]  ]; then
+    source <(kubectl completion zsh)
+fi
 
