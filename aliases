@@ -24,7 +24,7 @@ alias mysql-restart="/usr/local/mysql/support-files/mysql.server restart"
 alias mysql-force="pkill -9 mysql"
 
 # redis
-alias redis-start="/Users/Jhui/redis-3.2.0/src/redis-server /Users/Jhui/redis-3.2.0/redis.conf"
+alias redis-start="/usr/local/redis/src/redis-server /usr/local/redis/redis.conf"
 alias redis-stop="pkill -9 redis"
 
 # Shortcuts

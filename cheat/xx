@@ -1,0 +1,7 @@
+sshpass -p "0813@com.jcy" ssh root@101.132.41.72
+
+sshpass -p "0813@com.jcy" ssh root@101.132.46.95
+
+sshpass -p "0813@com.jcy" scp jceb-client-provider-0.0.1-SNAPSHOT.jar root@101.132.41.72:/home/jcy/api-client
+
+sshpass -p "0813@com.jcy" scp jceb-client-provider-0.0.1-SNAPSHOT.jar root@101.132.46.95:/home/jcy/api-client
