@@ -473,3 +473,4 @@ let NERDTreeIgnore=['\.pyc']
 let g:pyflakes_use_quickfix = 0
 
 Plugin 'suan/vim-instant-markdown'
+

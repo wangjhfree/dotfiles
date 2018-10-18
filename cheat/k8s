@@ -1,0 +1,52 @@
+
+# nodes
+
+kubectl get node
+
+
+# deployment
+
+kubectl get deploy [deployment] -n [namespace] -o wide
+
+
+# rs 新版pod controller, rs相比rc支持集合式的selector
+
+kubectl rs 
+
+
+
+# pod
+
+kubectl get pod --all-namespaces
+kubectl get pod
+
+kubectl delete pod [pod]
+
+
+# 操作资源
+
+// 创建
+kubectl create -f [file.yaml]
+
+// 替换
+kubectl replace -f [file.yaml]
+
+// 对运行中的容器修改
+kubectl patch pod [pod] -p '{"metadata":{"labels":{"app":"nginx-3"}}}'
+
+// 编辑
+kubectl edit po [pod]
+
+// 删除资源
+kubectl delete -f [file.yaml]
+kubectl delete po [pod]
+kubectl delete po -lapp=nginx-3
+
+// apply
+
+# 日志
+
+kubectl logs -f [pod]
+
+
+

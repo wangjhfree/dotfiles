@@ -1,11 +1,4 @@
 # dotfiles
 
 
-
-#  APPLICATIONS INSTALL
-
-> sougou
-> chrome
-> 
-
-> xcode - git
+配置信息
