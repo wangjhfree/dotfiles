@@ -7,4 +7,4 @@ __pycache__/
 
 #ignore
 .DS_Store
-/sublime
+sublime/
