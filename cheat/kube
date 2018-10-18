@@ -1,0 +1,47 @@
+# 查询所有的pod
+kubectl get pod --all-namespaces
+
+# 查询pod位于哪个node
+kubectl get pod $container_name  -o wide -n jcgroup-pre
+
+# 查询节点
+kubectl get node
+
+# 查询节点信息
+kubectl describe node $node_name
+
+# 增加label
+kubectl label node $node_name node_type=$label_name
+
+# 根据label筛选节点
+kubectl get node -a -l nodetype=$label_name
+
+# 查询已部署的文件
+kubectl get deploy -n jcgroup-pre
+
+# 替换文件
+kubectl replace -f deploy.yaml
+
+# 删除部署的服务
+kubectl delete pod $container_name --grace-period=0 --force -n jcgroup-pre
+
+# 日志
+k8s11
+
+# 进入容器
+kubectl exec -it bidding-admin-gateway-75757bd654-vzrg5 -c bidding-admin-gateway bash --namespace=jcgroup-pro
+
+# 重启次数统计
+kubectl get pods --sort-by='.status.containerStatuses[0].restartCount' --namespace=jcgroup-pre
+
+# k8s jenkins
+http://10.0.34.23:8080/
+admin/admin321
+# deployment
+kubectl  scale deployment order  order-gateway  --replicas=0   -n  jcgroup-pre
+
+
+
+
+
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJqY2FkbWluLXRva2VuLTdtY2tzIiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZXJ2aWNlLWFjY291bnQubmFtZSI6ImpjYWRtaW4iLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC51aWQiOiIyZGZjMzU1OC04ZjBmLTExZTgtYmI5Ni0wMDE2M2UxYzA4YWQiLCJzdWIiOiJzeXN0ZW06c2VydmljZWFjY291bnQ6a3ViZS1zeXN0ZW06amNhZG1pbiJ9.Qn2gZAE1bhoh-LoCGB6qC8-GO8pvvkeVdTiRSSdKI415Q1ikpPxMRC7_D5T7iiA8qYpA9uLVTFteBh4P8vbDVpNf2EuI_GEWytR06M6r_4yRMo_IVNtHPwc_Luy8oNdGCWlXg0R2ZVvFytgTVc7mlpfl5wQH1QD7-nJFe2lrTlEsUIi3yga_8UUQUEcs6tAwqlUG7YX4iMadfpNkdjyV0lDevwHYNAqLNrDkcQb8OouRQLHsSdnVbfPq1tYjAErM3EhE9Sx7V4FbJeBI-TWPkj6cbaagfCk2KeaM0ctdHyosEUR7RE212SuvUbLBCfBmqXUvlsIJwSwbuuNaDqJrBw

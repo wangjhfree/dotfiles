@@ -1,0 +1,43 @@
+# redis
+
+/* 安装
+
+tar -xzvf redis-3.2.0.tar.gz -C /usr/local/
+
+chown -R root:root /usr/local/redis-3.2.0
+
+ln -s /usr/local/redis-3.2.0 /usr/local/redis
+
+cd /usr/local/redis && make && make install
+
+*/
+
+/* 配置redis.conf
+
+# 远程登录
+bind 0.0.0.0
+# 设置密码
+requirepass password
+
+*/
+
+/* 命令
+
+# 启动&停止
+redis-server &
+redis-cli shutdown
+
+# 登录
+redis-cli -h 127.0.0.1 -p 6379 -a 123
+或者
+redis-cli -h 127.0.0.1 -p 6379
+auth 123
+
+# 设置密码
+config set requirepass 123
+config get requirepass
+
+*/
+
+
+

@@ -1,0 +1,46 @@
+# mongodb
+
+
+/* 安装
+
+tar -xzvf mongodb-linux-x86_64-rhel70-3.4.7.tgz -C /usr/local
+
+ln -s /usr/local/mongodb-linux-x86_64-rhel70-3.4.7 /usr/local/mongodb
+
+echo "export MONGO_HOME=/usr/local/mongo" >> /etc/profile
+echo "export PATH=\${MONGO_HOME}/bin:\$PATH" >> /etc/profile
+
+source /etc/profile
+
+mkdir -p /data/db
+
+*/
+
+/* 命令
+
+# 启动、关闭
+mongod &
+mongod --shutdown
+
+# 创建用户
+use admin
+db.createUser(
+  {
+    user: "admin",
+    pwd: "87abc%",
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" } ]
+  }
+)
+
+use act
+db.createUser(
+  {
+    user: "actor",
+    pwd: "87abc%",
+    roles: [ { role: "readWrite", db: "act" }]
+  }
+)
+
+db.auth('actor', '87abc%')
+
+*/

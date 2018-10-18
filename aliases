@@ -17,6 +17,7 @@ alias ..="cd .."
 
 alias lsl="ls -lrt"
 alias lm="ls -al|more"
+alias vi="vim"
 
 # python catalogue
 alias fpy="cd /usr/local/Frameworks/Python.framework/Versions/"

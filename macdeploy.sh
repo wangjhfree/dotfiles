@@ -15,6 +15,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 ln -s .dotfiles/zshrc .zshrc
 ln -s .dotfiles/aliases .aliases
 ln -s .dotfiles/exports .exports
+ln -s .dotfiles/gitconfig .gitconfig
 
 
 # install homebrew
@@ -53,7 +54,9 @@ ln -s ${HOME_PATH}/.dotfiles/pip ${HOME_PATH}/.pip
 
 pip install ipython
 pip install virtualenv
+pip install cheat
 
+ln -s ${HOME_PATH}/.dotfiles/cheat ${HOME_PATH}/.cheat
 
 # nodejs
 wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh
