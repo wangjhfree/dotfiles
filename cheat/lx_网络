@@ -1,0 +1,11 @@
+# dig和nslookup
+
+// ubuntu
+apt-get install dnsutils
+
+// Debain
+apt-get update
+apt-get install dnsutils
+
+// Fedora、Centos
+yum install bind-utils

@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+alias pyd="deactivate"
+
+# Google Chrome
+alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
+
+# redis
+alias redis-start="/usr/local/redis/src/redis-server /usr/local/redis/redis.conf"
+alias redis-stop="pkill -9 redis"
+
+# Shortcuts
+alias dl="cd ~/Downloads"
+alias dt="cd ~/Desktop"
+alias g="git"
+alias ..="cd .."
+
+alias lsl="ls -lrt"
+alias lm="ls -al|more"
+alias vi="vim"
+
+# python catalogue
+alias fpy="cd /usr/local/Frameworks/Python.framework/Versions/"
+

@@ -1,0 +1,48 @@
+http://man.linuxde.net/
+
+http://www.runoob.com/linux/linux-command-manual.html
+
+
+> 查看cmd说明
+
+// 说明， 查看命令所在具体文档类别
+whatis [cmd]
+
+// 详细
+info [cmd]
+
+// 页面所属的分类标识
+man [cmd]
+    1. 用户可以操作的命令或者是可执行文件
+    2. 系统核心可调用的函数与工具等
+    3. 一些常用的函数与数据库
+    4. 设备文件的说明
+    5. 设置文件或者某些文件的格式
+    6. 游戏
+    7. 惯例与协议等。例如Linux标准文件系统、网络协议、ASCII码等内容说明
+    8. 系统管理员可用的管理条令
+    9. 与核相关的文件
+
+> 例子
+
+// 查看分类
+whatis printf
+
+// 分类3的帮助
+man 3 printf
+
+// 关键字查询
+man -k keyword
+man -k GNOME config | grep 1
+
+> 查看路径
+
+// binary文件所在路径
+which [cmd]
+
+// 程序搜索路径
+whereis [cmd]
+
+
+
+

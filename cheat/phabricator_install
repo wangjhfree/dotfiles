@@ -1,0 +1,11 @@
+# 安装
+
+/usr/sbin/php-fpm
+
+service php-fpm reload
+
+ps -ef | grep php-fpm | grep -v grep | awk '{print $2}' | xargs sudo kill
+
+yum install php-ldap
+
+yum install php56-php-ldap.x86_64

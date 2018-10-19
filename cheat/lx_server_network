@@ -1,0 +1,88 @@
+ethtool ethN #链路是否连通
+
+iconfig #网卡
+
+route -n #网关
+
+nslookup jcease.com #查看dns解析
+
+traceroute jcease.com #追踪路由状况
+
+telnet IP PORT #端口开放情况
+
+netstat -lntp #查看所有监听接口
+
+netstat -antp #查看所有已经建立的连接
+
+netstat -s #查看网络统计信息
+
+# TCP连接资源，socket资源默认5000个，2MSL
+netstat -n | awk '/^tcp/ {++S[$NF]} END {for(a in S) print a, S[a]}'
+
+# TIME_WAIT积累与端口耗尽问题 vi /etc/sysctl.conf 
+net.ipv4.tcp_syncookies = 1
+net.ipv4.tcp_tw_reuse = 1
+net.ipv4.tcp_tw_recycle = 1
+net.ipv4.tcp_fin_timeout = 30
+生效 /sbin/sysctl -p
+
+# 查看连接占用带宽
+iftop
+
+# 抓包数据
+tcpdump
+	# tcpdump -n port N    //只捕捉特定端口的流量
+	# tcpdump -n port N1 or port N2    //捕获多个端口的流量
+	# tcpdump -w output.pcap    //数据包转储，将原始数据包保留到output.pcap
+	# tcpdump -C 10 -w output.pcap    //限制每个转储文件的上限，达到上限后将文件分卷(以MB为单位)
+	# tcpdump -C 10 -W 5 -w output.pcap    //不仅限制每个卷的上限，而且限制卷的总数
+	# tcpdump -r output.pcap    //重播已经保存的数据包记录
+
+
+# 网络
+1. 如果是网络不通，要定位具体的问题，一般是不断尝试排除不可能故障的地方，最终定位问题根源。一般需要查看
+是否接入到链路
+是否启用了相应的网卡
+本地网络是否连接
+DNS故障
+能否路由到目标主机
+远程端口是否开放
+
+2. 如果是网络速度慢，一般有以下几个方式定位问题源：
+DNS是否是问题的源头
+查看路由过程中哪些节点是瓶颈
+查看带宽的使用情况
+
+# 网络应用
+CURL
+
+// 获取网页
+curl "www.baidu.com"
+
+// 保存网页
+-o 指定保存的网页名
+-O 自动设置网页名
+curl -o baidu.html "www.baidu.com"
+curl -O "www.baidu.com"
+
+// 网页重定向
+curl www.sina.com
+curl -L www.sina.com
+
+// 指定请求方式和传递参数
+curl -X GET "www.xxxx.com?param1=1"
+curl -X POST --header "Content-Type:application/json" --data "param1=1&param2=2" "www.xxxx.com"
+
+curl -X POST --data-urlencode "param1=1&param2=2" "www.xxxx.com"
+
+// 请求的详细信息
+curl -v "www.baidu.com"
+
+// 响应的头信息
+curl -i "www.baidu.com"
+curl -I "www.baidu.com" -只显示头
+
+// 指定客户端
+--user-agent "User Agent"
+
+

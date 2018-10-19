@@ -1,0 +1,5 @@
+# MAC /usr/local/Cellar/mysql/5.7.18_1/support-files
+
+./mysql.server start
+./mysql.server stop
+./mysql.server restart

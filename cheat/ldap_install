@@ -1,0 +1,195 @@
+# 安装
+
+1. 环境准备
+
+/*
+关闭 selinux firewalld
+setenforce 0
+systemctl stop firewalld.service
+systemctl disable firewalld.service
+*/
+
+2. 安装LDAP服务器和客户端，migrationtools工具包
+
+/*
+yum install -y openldap-servers openldap-clients migrationtools
+*/
+
+3. 设置openldap管理员密码
+
+/*
+slappasswd
+返回 {SSHA}KoD7oH4K0SnwaQobwZ66zrxE/LfwcX/R
+*/
+
+4. 更改openldap配置
+
+/*
+查看安装文件
+rpm -ql openldap
+rpm -ql openldap-servers
+
+vi /etc/openldap/slapd.d/cn\=config\/olcDatabase\={2}hdb.ldif
+
+找到olcSuffix，修改为你的dc，如:
+dc=mypaas,dc=com
+
+下一行olcRootDN, 修改为你的用户名，如:
+cn=Manager,dc=mypaas,dc=com
+
+在文件末尾添加一行，设置刚才的密码：
+olcRootPW: {SSHA}f13zZnx/b4LQ/ErM+Rf9VSVEJqIE7yHM
+*/
+
+5. 更改监控认证
+
+/*
+vi /etc/openldap/slapd.d/cn\=config\/olcDatabase\={1}monitor.ldif
+
+修改 olcAccess 中的dn.base="cn=xxxxxxx"这行为刚才设置的用户名，如：
+dn.base="cn=Manager,dc=mypaas,dc=com"
+*/
+
+6. 设置DB cache
+
+/*
+cp /usr/share/openldap-servers/DB_CONFIG.example /var/lib/ldap/DB_CONFIG
+chown -R ldap:ldap /var/lib/ldap/
+*/
+
+7. 测试配置
+
+/*
+slaptest -u
+末尾出现configfile testing successed 说明成功了
+*/
+
+8. 启动
+
+/*
+systemctl start slapd.service
+systemctl enable slapd.service
+*/
+
+9. 导入模板
+/*
+ls /etc/openldap/schema/*.ldif | xargs -I {} sudo ldapadd -Y EXTERNAL -H ldapi:/// -f {}
+*/
+
+10. fix openLDAP checksum error on config files
+
+/*
+1. cp /etc/openldap/slapd.d/cn=config/olcDatabase={2}hdb.ldif /tmp
+2: yum install perl-Archive-Zip
+3: crc32 /tmp/*ldif
+4: vi /etc/openldap/slapd.d/cn=config/olcDatabase={2}hdb.ldif
+AUTO-GENERATED FILE - DO NOT EDIT!! Use ldapmodify.
+CRC32 61e6182a
+*/
+
+11. 安装httpd服务器
+
+/*
+yum install httpd -y
+*/
+
+12. 修改httpd.conf
+
+/*
+vi /etc/httpd/conf/httpd.conf
+找到AllowOverride一行，修改none为all
+如果想修改端口号，修改Listen 80一行
+*/
+
+13. 启动服务，测试页面
+
+/*
+systemctl start httpd.service 
+systemctl enable httpd.service
+
+curl http://127.0.0.1/
+*/
+
+14. 安装phpldapadmin
+
+/*
+yum install phpldapadmin
+
+（如果找不到软件包，重新设置一下yum源）
+yum localinstall http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
+*/
+
+15. 修改配置文件
+
+/*
+vi /etc/phpldapadmin/config.php
+
+找到并取消下面几行的注释： 
+$servers->setValue(‘server’,’host’,’127.0.0.1’);
+
+$servers->setValue(‘server’,’port’,389);
+
+$servers->setValue(‘server’,’base’,array(‘dc=mypaas,dc=com’)); 
+（array里加上openldap配置文件中设置的olcSuffix）
+
+$servers->setValue(‘login’,’auth_type’,’session’);
+
+$servers->setValue(‘login’,’attr’,’dn’); 
+把它的下一行注释掉
+
+#$servers->setValue(‘login’,’attr’,’uid’);
+*/
+
+16. 修改访问配置文件，允许任意ip访问
+
+/*
+vi /etc/httpd/conf.d/phpldapadmin.conf 
+    # Apache 2.2
+    # Order Deny,Allow
+    # Deny from all
+    Allow from 127.0.0.1
+    Allow from ::1
+    Allow from 10.0.50.0/24
+*/
+
+17. 创建基础目录，在/etc/openldap目录下添加base.ldif文件
+
+/*
+cd /etc/openldap/ 
+vi base.ldif
+在文件中添加以下内容
+
+dn: dc=mypaas,dc=com 
+o: mypaas
+objectclass: dcObject 
+objectclass: organization 
+（dc 修改为你自己的内容）
+
+导入
+ldapadd -f base.ldif -x -D cn=Manager,dc=mypaas,dc=com -W
+
+查询
+ldapsearch -x -D 'cn=Manager,dc=jcgroup, dc=local' -w 123456 -h 127.0.0.1 -b 'dc=jcgroup,dc=local'
+*/
+
+18. 重启httpd服务
+
+/*
+systemctl restart httpd.service
+*/
+
+19. 访问web管理端
+
+/*
+访问 http://ip/phpldapadmin
+登陆用户名：cn=Manager,dc=mypaas,dc=com
+*/
+
+
+CentOS7 部署LDAP服务器 - https://blog.csdn.net/computer1024/article/details/78172785
+
+LDAP快速入门 - http://www.cnblogs.com/obpm/archive/2010/08/28/1811065.html
+
+OpenLDAP编译安装及配置 - http://www.cnblogs.com/netonline/p/7486832.html
+
+OpenLDAP学习笔记 - http://www.kaiyuanba.cn/content/manage/ringkee/openldap.htm
