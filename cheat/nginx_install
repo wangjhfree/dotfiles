@@ -1,5 +1,0 @@
-# 编译
-
-./configure --prefix=/usr/local/nginx --with-http_ssl_module --with-http_realip_module --with-http_flv_module --with-http_gzip_static_module --with-http_stub_status_module --with-pcre=/usr/local/pcre-8.41 --with-openssl=/usr/local/openssl-1.0.2l --with-zlib=/usr/local/zlib-1.2.11 --add-module=/usr/local/nginx-goodies-nginx-sticky-module-ng-08a395c66e42 --add-module=/usr/local/nginx_tcp_proxy_module-master
-
-nginx排查 - http://blog.51cto.com/h2ofly/1324588

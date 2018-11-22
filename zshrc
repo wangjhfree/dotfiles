@@ -92,22 +92,8 @@ done;
 unset file;
 
 
-
 # cheat
 export CHEATCOLORS=true
-
-# maven
-export MAVEN_HOME=/Users/Jhui/java/apache-maven-3.5.0
-export PATH=${PATH}:${MAVEN_HOME}/bin
-
-# nvm
-[ -s "/Users/Jhui/.nvm/nvm.sh" ] && . "/Users/Jhui/.nvm/nvm.sh" # This loads nvm
-export PATH="/usr/local/opt/openssl/bin:$PATH"
-
-# kubectl
-if [ $commands[kubectl]  ]; then
-    source <(kubectl completion zsh)
-fi
 
 # mysql
 PATH=$PATH:/usr/local/Cellar/mysql@5.6/5.6.41/bin
