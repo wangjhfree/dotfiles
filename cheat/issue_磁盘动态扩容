@@ -1,0 +1,52 @@
+[参考](http://blog.51cto.com/51eat/1843663)
+
+# 1.先挂载磁盘/dev/sdb 需要重启
+
+# 2.重启完成fdisk -l 可以看到
+
+Disk /dev/sda: 53.7 GB, 53687091200 bytes, 104857600 sectorsUnits = sectors of 1 * 512 = 512 bytesSector size (logical/physical): 512 bytes / 512 bytesI/O size (minimum/optimal): 512 bytes / 512 bytesDisk label type: dosDisk identifier: 0x00016f81 Device Boot Start End Blocks Id System/dev/sda1 * 2048 2099199 1048576 83 Linux/dev/sda2 2099200 104857599 51379200 8e Linux LVM Disk /dev/sdb: 214.7 GB, 214748364800 bytes, 419430400 sectorsUnits = sectors of 1 * 512 = 512 bytesSector size (logical/physical): 512 bytes / 512 bytesI/O size (minimum/optimal): 512 bytes / 512 bytesDisk label type: dosDisk identifier: 0x03a9d9b0 /dev/sdb
+
+# 3.对/dev/sdb进行分区
+fdisk /dev/sdb
+
+Disk /dev/sdb: 214.7 GB, 214748364800 bytes, 419430400 sectorsUnits = sectors of 1 * 512 = 512 bytesSector size (logical/physical): 512 bytes / 512 bytesI/O size (minimum/optimal): 512 bytes / 512 bytesDisk label type: dosDisk identifier: 0x03a9d9b0 Device Boot Start End Blocks Id System/dev/sdb1 2048 419430399 209714176 83 Linux 分成/dev/sdb1
+
+# 4.创建物理卷 pvcreate /dev/sdb1
+pvcreate /dev/sdb1
+
+Physical volume "/dev/sdb1" successfully created.
+
+# 5.查看物理卷 pvdisplay
+pvdisplay
+
+--- Physical volume --- PV Name /dev/sda2 VG Name cl PV Size 49.00 GiB / not usable 3.00 MiB Allocatable yes PE Size 4.00 MiB Total PE 12543 Free PE 1 Allocated PE 12542 PV UUID 29w3XS-WLZj-9cKA-EyFf-qZ9X-lQv2-ANV0Cv "/dev/sdb1" is a new physical volume of "200.00 GiB" --- NEW Physical volume --- PV Name /dev/sdb1 VG Name PV Size 200.00 GiB Allocatable NO PE Size 0 Total PE 0 Free PE 0 Allocated PE 0 PV UUID sduiHT-YsCP-pAAR-1cSl-Oive-q25l-haRSef
+
+# 6.查看卷组
+vgdisplay
+
+--- Volume group --- VG Name cl System ID Format lvm2 Metadata Areas 1 Metadata Sequence No 4 VG Access read/write VG Status resizable MAX LV 0 Cur LV 2 Open LV 2 Max PV 0 Cur PV 1 Act PV 1 VG Size 49.00 GiB PE Size 4.00 MiB Total PE 12543 Alloc PE / Size 12543 / 49.00 GiB Free PE / Size 0 / 0 VG UUID m91nTf-j4EN-Tmf3-1fe5-MM5o-1751-VR8x0W
+
+# 7.将pv 扩容到 vg
+vgextend cl /dev/sdb1
+
+Volume group "cl" successfully extended
+
+# 8.从vg中扩容lv
+lvextend -l +100%FREE /dev/mapper/cl-root
+
+Size of logical volume cl/root changed from 45.12 GiB (11551 extents) to 245.12 GiB (62750 extents). Logical volume cl/root successfully resized.
+
+# 9.进行自动扩展 
+xfs_growfs /dev/mapper/cl-root
+
+# 10.可以看到/dev/mapper/cl-root文件系统，已经扩容完成
+df -h
+
+Filesystem Size Used Avail Use% Mounted on/dev/mapper/cl-root 246G 14G 232G 6% /devtmpfs 3.9G 0 3.9G 0% /devtmpfs 3.9G 84K 3.9G 1% /dev/shmtmpfs 3.9G 9.4M 3.9G 1% /runtmpfs 3.9G 0 3.9G 0% /sys/fs/cgroup/dev/sda1 1014M 175M 840M 18% /boottmpfs 783M 16K 783M 1% /run/user/42tmpfs 783M 0 783M 0% /run/user/0
+
+# 磁盘缩减扩容 http://blog.itpub.net/32980/viewspace-1123851/LVM管理之减少LV的大小规定动作 
+
+1. umount filesystem
+2. e2fsck filesystem
+3. resize2fs filesystem
+4. lvredure unmount /home 597 umount /home 598 fdisk -l 599 e2fsck /dev/mapper/debian--vg-home 600 resize2fs -f /dev/mapper/debian--vg-home 50G 601 lvreduce -L50g /dev/mapper/debian--vg-home 602 lvs 603 historyroot@iccmdware1:/# mount /dev/mapper/debian--vg-home /home

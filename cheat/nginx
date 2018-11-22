@@ -1,0 +1,66 @@
+# nginx-mac
+brew install nginx
+
+/usr/local/etc/nginx
+
+# nginx-centos 命令安装
+yum install nginx -y 
+
+/etc/nginx/nginx.conf
+
+# nginx-centos 编译安装
+yum install -y pcre-devel make gcc gcc-c++ ncurses-devel zlib-devel openssl--devel
+
+wget http://nginx.org/download/nginx-1.12.0.tar.gz
+
+./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module --with-pcre
+
+make&&make install
+
+
+# 配置
+server {
+    listen 80;
+    server_name 10.112.208.250;
+
+    access_log /var/log/nginx/web_access.log;
+    error_log /var/log/nginx/web_error.log;
+
+    gzip on;
+    gzip_min_length 1k;
+    gzip_comp_level 6;
+    gzip_types text/plain application/javascript application/x-javascript text/css application/xml text/javascript application/x-httpd-php image/jpeg image/gif image/png font/ttf font/otf image/svg+xml;
+    gzip_vary on;
+
+    # 前端
+    location / {
+        root /data/ssqywgl_web/;
+        index  index.html index.htm;
+        try_files $uri $uri/ /index.html;
+    }
+    # API
+    location /api/ {
+        proxy_pass_header Server;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://127.0.0.1:8080/;
+    }
+    # 管理后台
+    location /admin/ {
+        proxy_pass_header Server;
+        proxy_set_header Host $http_host;
+        proxy_redirect off;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Scheme $scheme;
+        proxy_pass http://127.0.0.1:8080;
+    }
+    # 管理后台静态文件
+    location /admin_static/ {
+        alias /data/ssqywgl/apps/static/;
+        autoindex on;
+    }
+}
+
+

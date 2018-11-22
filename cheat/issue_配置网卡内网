@@ -1,0 +1,33 @@
+yum install -y net-tools
+
+ifconfig 
+
+cd /etc/sysconfig/network-scripts/
+
+vi ifcfg-eno16777984
+
+---
+TYPE=Ethernet
+BOOTPROTO=static    #设置网卡获得ip地址的方式，可能的选项为static，dhcp或bootp，分别对应静态指定的 ip地址，通过dhcp协议获得的ip地址，通过bootp协议获得的ip地址
+DEFROUTE=yes
+PEERDNS=yes
+PEERROUTES=yes
+IPV4_FAILURE_FATAL=no
+IPV6INIT=yes
+IPV6_AUTOCONF=yes
+IPV6_DEFROUTE=yes
+IPV6_PEERDNS=yes
+IPV6_PEERROUTES=yes
+IPV6_FAILURE_FATAL=no
+NAME=eno16777984
+UUID=9ddfc4aa-3f6e-49c0-8fdf-4d24618e68e4
+DEVICE=eno16777984    #描述网卡对应的设备别名，例如ifcfg-eth0的文件中它为eth0，Dell服务器的一般为：em1、em2
+ONBOOT=yes    #系统启动时是否设置此网络接口，设置为yes时，系统启动时激活此设备  
+IPADDR=10.0.31.194    #如果设置网卡获得 ip地址的方式为静态指定，此字段就指定了网卡对应的ip地址 
+NETMASK=255.255.255.0    #网卡对应的网络掩码  
+GATEWAY=10.0.31.1    #注意：网桥
+---
+
+systemctl status network.service
+
+service network restart 或 /etc/init.d/network restart

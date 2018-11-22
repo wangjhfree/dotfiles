@@ -1,0 +1,8 @@
+# pyenv and Class has no objects member
+
+{
+    "python.pythonPath": "/Users/Jhui/djjcywgl/venv/bin/python",
+    "python.linting.pylintArgs": [
+        "--load-plugins=pylint_django"
+     ],
+}
