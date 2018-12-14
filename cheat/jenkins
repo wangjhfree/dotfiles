@@ -3,7 +3,8 @@
 docker pull jenkins:2.60.3
 
 mkdir -p /opt/jenkins/
-chown 1000:1000 /opt/jenkins/
+chown -R 1000:1000 /opt/jenkins/
+chmod -R 777 /opt/jenkins/
 
 docker run --name jk -p 8080:8080 -p 50000:50000 -v /opt/jenkins/:/var/jenkins_home -d jenkins:2.60.3
 
@@ -12,7 +13,14 @@ docker run --name jk -p 8080:8080 -p 50000:50000 -v /opt/jenkins/:/var/jenkins_h
 插件: Role-based Authorization Strategy,
     Maven Integration plugin,
     Build with Parameters
+
     
 # 忘记密码
 
 https://blog.csdn.net/jlminghui/article/details/54952148
+
+# Plugin
+
+SSH plugin
+SSH2 Easy
+

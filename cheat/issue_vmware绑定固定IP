@@ -57,7 +57,7 @@ host k8s03 {
 	hardware ethernet 00:0c:29:b1:41:ad;
 	fixed-address 172.16.157.132;
 }
-host k8s04 {
+host vm资源名称 {
 	hardware ethernet 00:0c:29:cb:71:a2;
 	fixed-address 172.16.157.133;
 }

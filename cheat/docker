@@ -1,0 +1,68 @@
+# inspect a running container
+docker inspect <container_name> (or <container_id>)
+
+# Get the process ID for a container
+# Source: https://github.com/jpetazzo/nsenter
+docker inspect --format {{.State.Pid}} <container_name_or_ID>
+
+# List the current mounted volumes for a container (and pretty print)
+# Source:
+# http://nathanleclaire.com/blog/2014/07/12/10-docker-tips-and-tricks-that-will-make-you-sing-a-whale-song-of-joy/
+docker inspect --format='{{json .Volumes}}' <container_id> | python -mjson.tool
+
+# Copy files/folders between a container and your host
+docker cp foo.txt mycontainer:/foo.txt
+
+# 获取镜像
+docker search 
+docker pull 
+
+# 本地仓库大小
+docker system df 
+# 本地镜像
+docker images
+docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"
+docker images -f since=mongo:3.2 //查找3.2之前的镜像
+# 删除<none>
+docker image prune
+# 删除镜像
+docker rmi nginx:v2
+
+# 启动镜像
+docker run
+example: 
+    docker pull java
+    docker run -it java ps/java -version/uname/ip a/env
+docker run -it --rm centos:centos7.4.1708 bash
+    -it -i交互式操作 -t终端
+    --rm 说明容器退出后随之删除
+    centos:centos7.4.1708 镜像基础用来启动容器
+    bash 交互式shell
+    --name，没指定deamon自动生成随机字符串
+    --cidfile=""，指定containerID输出指定文件(PIDfile)
+    -d 后台运行
+docker run --name jc_mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.7.20
+
+# docker生命周期
+docker create/start/stop/pause/unpause
+# 进入容器
+docker exec -it $container_name bash
+# 显示容器
+docker ps
+docker ps -a
+# 删除容器
+docker rm $container_name
+
+# 查看容器日志
+docker logs -f $container_name
+# 查看端口
+docker port $container_name
+
+# 容器互联
+1.容器互联，自定义docker网络，减少使用--link
+2.新建网络，-d 网络类型
+docker network create -d bridge jcnet
+3.测试
+docker run -it --rm --name=bx1  --net jcnet centos:centos7.4.1708 bash
+docker run -it --rm --name=bx2  --net jcnet centos:centos7.4.1708 bash
+4.docker 启动时，自动创建docker0虚拟网桥172.17.0.0/16

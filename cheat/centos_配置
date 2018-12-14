@@ -1,0 +1,8 @@
+
+# ifconfig
+yum install -y net-tools
+
+# 支持鼠标
+yum install -y gpm*
+
+

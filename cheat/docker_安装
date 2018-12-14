@@ -1,0 +1,75 @@
+# 查看Linux内核版本，Docker requires a 64-bit OS and version 3.10 or higher of the Linux kernel.
+uname -a 
+
+# centos 安装
+1.关闭selinux
+setenforce 0
+配置/etc/selinux/config  SELINUX=disabled
+2.关闭防火墙
+firewall-cmd --state
+systemctl disable firewalld.service
+systemctl stop firewalld.service
+iptables -nL
+firewalld跟iptables比起来，不好的地方是每个服务都需要去设置才能放行，因为默认是拒绝。而iptables里默认是每个服务是允许，需要拒绝的才去限制。
+3.依赖
+yum install -y yum-utils device-mapper-persistent-data lvm2
+yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+yum makecache fast
+4.安装docker-ce
+yum list docker-ce --showduplicates | sort -r
+yum -y install docker-ce
+5.启动docker
+systemctl enable docker.service
+systemctl start docker.service
+systemctl status docker.service
+6.更换docker镜像源
+tee /etc/docker/daemon.json <<-'EOF'
+{
+  "registry-mirrors": ["https://g8bwdrsz.mirror.aliyuncs.com"]
+}
+EOF
+    http://registry.docker-cn.com
+    https://docker.mirrors.ustc.edu.cn
+    https://hub-mirror.c.163.com
+systemctl daemon-reload
+systemctl restart docker.service
+docker info
+docker search nginx
+7.测试
+docker run hello-world
+8.配置文件及启动脚本路径
+/etc/sysconfig/docker
+/lib/systemd/system/docker.service
+iptables -nL
+ip a 生成docker0网桥，本机访问
+
+# centos卸载
+yum remove docker-ce
+rm -rf /var/lib/docker
+
+# macos安装
+1.下载地址
+https://download.docker.com/mac/stable/Docker.dmg
+2.镜像源
+Perferences... -> Daemon -> Registry mirrors -> http://hub-mirror.c.163.com
+
+
+# 仓库Repository
+1.私有仓库
+docker pull registry:2.6.2
+docker run --name=dk_registry --restart always -p 5000:5000 -v /opt/registry/:/tmp/registry -d registry:2.6.2
+docker tag nginx 127.0.0.1:5000/nginx
+docker push 127.0.0.1:5000/nginx
+
+2.查看私有仓库镜像
+curl 127.0.0.1:5000/v2/_catalog
+
+//注: Docker默认不允许非HTTPS方式推送镜像，编辑/etc/docker/daemon.json
+{
+    "registry-mirror":[
+        "https://registry.docker-cn.com"
+    ]
+    "insecure-registries":[
+        "10.0.31.194:5000
+    ]
+}

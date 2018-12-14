@@ -1,0 +1,17 @@
+# docker commit的使用
+docker pull nginx:1.13.7
+docker run --name webserver -d -p 80:80 nginx:1.13.7
+docker ps
+docker exec -it webserver bash
+/# echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
+/# exit
+docker diff webserver
+docker commit --author "wangjh" --message "修改默认页面" webserver nginx:v2
+docker history nginx:v2
+docker run --name web2 -d -p 8080:80 nginx:v2
+注: 慎用docker commit，修改操作会导致额外的内容添加，导致镜像臃肿;
+优点:最方便，最快速;缺点:不规范，无法自动化
+
+# dockerfile
+
+docker build -t $image_name .
