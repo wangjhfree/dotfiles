@@ -1,0 +1,10 @@
+# 安装
+
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.2/install.sh | bash
+
+echo 'export NVM_DIR="$HOME/.nvm"' >> /etc/profile
+echo '[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"' >> /etc/profile
+
+source /etc/profile
+
+nvm install current
