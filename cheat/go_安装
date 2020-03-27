@@ -1,0 +1,81 @@
+
+Mac 版
+
+一、Go语言安装
+
+1. 下载地址https://golang.org/dl/，默认目录/usr/local/go
+2. 环境变量 /etc/profile或.zshrc 配置
+PATH=$PATH:/usr/local/go/bin
+或者
+1. brew info go & brew install go
+2. 
+export GOROOT="/usr/local/Cellar/go/1.10.3/libexec"
+export GOPATH="${HOME}/go_test/"
+export GOPATH="${GOPATH}/bin"
+export PATH="${PATH}:${GOPATH}:${GOPATH}/bin"
+
+3. 查看go相关的环境变量
+go env
+
+GOROOT 安装目录
+GOPATH 日常开发根目录
+  a. src 存放源代码 .go .c .h .s
+  b. pkg 编译后生成的文件 .a
+  c. bin 编译后的可执行文件
+GOBIN 是GOPATH下的bin目录，该环境变量影响到go install
+
+二、Vscode的Golang插件
+
+    Colorization 代码着彩色
+    Completion Lists 代码自动完成（使用gocode）
+    Snippets  代码片段
+    Quick Info 快速提示信息（使用godef）
+    Goto Definition 跳转到定义（使用godef）
+    Find References  搜索参考引用（使用go-find-references）
+    File outline 文件大纲（使用go-outline）
+    Workspace symbol search 工作区符号搜索（使用 go-symbols）
+    Rename 重命名（使用gorename）
+    Build-on-save 保存构建（使用go build和go test）
+    Format 代码格式化（使用goreturns或goimports或gofmt）
+    Add Imports  添加引用（使用 gopkgs）
+    Debugging 调试代码（使用delve）
+
+三、插件安装
+
+mkdir -p src/golang.org/x/
+git clone https://github.com/golang/tools.git tools
+
+
+gocode
+go get -u -v github.com/nsf/gocode
+
+gopkgs
+vscode
+
+go-outline
+go get -u -v github.com/lukehoban/go-outline
+
+go-symbols
+go install github.com/acroca/go-symbols
+
+guru
+go install golang.org/x/tools/cmd/guru
+
+gorename
+go install golang.org/x/tools/cmd/gorename
+
+dlv
+vscode
+
+gocode-gomod
+go install github.com/stamblerre/gocode
+
+godef
+go get -u -v github.com/rogpeppe/godef
+
+goreturns
+go install github.com/sqs/goreturns
+
+golint
+go get -u -v github.com/golang/lint/golint
+go install golang.org/x/lint/golint

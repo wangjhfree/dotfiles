@@ -9,6 +9,8 @@ alias dt="cd ~/Desktop"
 alias g="git"
 alias ..="cd .."
 
+# cheat
+
 alias lsl="ls -lrt"
 alias lm="ls -al|more"
 alias vi="vim"

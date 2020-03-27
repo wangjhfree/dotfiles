@@ -1,51 +1,96 @@
 # 查看Linux内核版本，Docker requires a 64-bit OS and version 3.10 or higher of the Linux kernel.
 uname -a 
 
-# centos 安装
-1.关闭selinux
-setenforce 0
-配置/etc/selinux/config  SELINUX=disabled
-2.关闭防火墙
-firewall-cmd --state
-systemctl disable firewalld.service
-systemctl stop firewalld.service
-iptables -nL
-firewalld跟iptables比起来，不好的地方是每个服务都需要去设置才能放行，因为默认是拒绝。而iptables里默认是每个服务是允许，需要拒绝的才去限制。
-3.依赖
-yum install -y yum-utils device-mapper-persistent-data lvm2
-yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+早期版本: docker-io,docker-engine
+docker-ce 社区版
+docker-ee 企业版
+
+>>>> Docker CentOS 安装 <<<<
+https://docs.docker.com/install/linux/docker-ce/centos/
+
+# 1.移除旧版本
+sudo yum remove docker \
+          docker-client \
+          docker-client-latest \
+          docker-common \
+          docker-latest \
+          docker-latest-logrotate \
+          docker-logrotate \
+          docker-engine
+
+- warning: /etc/sysconfig/docker-storage saved as /etc/sysconfig/docker-storage.rpmsave
+- warning: /etc/docker/daemon.json saved as /etc/docker/daemon.json.rpmsave
+
+yum remove docker-ce
+rm -rf /var/lib/docker
+
+# 2.安装依赖
+yum install -y epel-release yum-utils device-mapper-persistent-data lvm2
+
+- epel-release: 扩展软件源，有很多软件 yum 安装找不到，这个可以
+- yum-utils: yum 实用工具
+- device-mapper-persistent-data: 设备映射
+- lvm2: 逻辑卷管理2代
+
+# 3.设置稳定版本的源&查看版本列表
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
 yum makecache fast
-4.安装docker-ce
 yum list docker-ce --showduplicates | sort -r
-yum -y install docker-ce
-5.启动docker
-systemctl enable docker.service
+
+- 在yum的 /etc/yum.repos.d 添加一个 docker-ce.repo 文件
+
+# 4.安装docker-ce
+yum install docker-ce docker-ce-cli containerd.io
+yum install docker-ce-<Version> docker-ce-cli-<Version> containerd.io
+
+- docker-ce: docker 服务器
+- docker-ce-cli: docker 客户端
+- containerd.io: 用于管理主机系统的完整生命周期，从映像输出和存储到容器执行和监视，再到底层存储、网络附件等等
+
+# 5.启动docker
+systemctl enable docker.service 
+- 开机自启动
 systemctl start docker.service
 systemctl status docker.service
-6.更换docker镜像源
+
+- 启动脚本路径 /lib/systemd/system/docker.service
+- 配置文件路径
+    docker V1.11之前: /etc/sysconfig/docker
+    之后: systemd方式管理docker, 默认没有创建配置文件, 需手动/etc/systemd/system/docker.service.d/docker.conf
+
+# 6.更换docker镜像源
 tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": ["https://g8bwdrsz.mirror.aliyuncs.com"]
 }
 EOF
-    http://registry.docker-cn.com
-    https://docker.mirrors.ustc.edu.cn
-    https://hub-mirror.c.163.com
+
 systemctl daemon-reload
 systemctl restart docker.service
 docker info
 docker search nginx
-7.测试
-docker run hello-world
-8.配置文件及启动脚本路径
-/etc/sysconfig/docker
-/lib/systemd/system/docker.service
-iptables -nL
-ip a 生成docker0网桥，本机访问
 
-# centos卸载
-yum remove docker-ce
-rm -rf /var/lib/docker
+- daemon.json.rpmsave: 备份配置文件
+- 其他源地址
+    http://registry.docker-cn.com
+    https://docker.mirrors.ustc.edu.cn
+    https://hub-mirror.c.163.com
+
+# 7.测试
+docker run hello-world
+
+# 8.关闭selinux
+setenforce 0
+配置/etc/selinux/config  SELINUX=disabled
+# 9.关闭防火墙
+ip a 生成docker0网桥，本机访问
+firewall-cmd --state
+systemctl disable firewalld.service
+systemctl stop firewalld.service
+iptables -nL
+- firewalld跟iptables比起来，不好的地方是每个服务都需要去设置才能放行，因为默认是拒绝。而iptables里默认是每个服务是允许，需要拒绝的才去限制。
 
 # macos安装
 1.下载地址

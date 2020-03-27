@@ -1,7 +1,5 @@
 #!usr/bin/env bash
 
-HOME_PATH='/Users/wangjh/'
-
 # install homebrew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
@@ -37,14 +35,18 @@ ln -s .dotfiles/vimrc .vimrc
 ln -s .dotfiles/aliases .aliases
 ln -s .dotfiles/exports .exports
 ln -s .dotfiles/gitconfig .gitconfig
-ln -s .dotfiles/pip ${HOME_PATH}/.pip
+
+# cheat 2.3.1
+brew install cheat
+rm -rf .cheat
+ln -s ${HOME}/.dotfiles/cheat ${HOME}/.cheat
+ln /usr/local/bin/cheat-darwin-amd64 /usr/local/bin/cheat
+
 
 # pip package
+ln -s ${HOME}/.dotfiles/pip ${HOME}/.pip
 pip install ipython
 pip install virtualenv
-pip install cheat
-ln -s .dotfiles/cheat ${HOME_PATH}/.cheat
-cp cheat.bash /usr/local/etc/bash_completion.d/
 
 # nodejs
 wget -qO- https://raw.github.com/creationix/nvm/v0.4.0/install.sh | sh

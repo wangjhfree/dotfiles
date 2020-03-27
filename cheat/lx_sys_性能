@@ -1,0 +1,127 @@
+# 查看系统负载-指定时间间隔内运行队列的平均进程数
+uptime
+15:31:30 up 127 days,  3:00,  1 user,  load average: 0.00, 0.00, 0.00
+说明:系统当前时间+主机已运行时间+用户连接数+系统平均负载，统计最近1，5，15分钟的系统平均负载
+总结:一般以CPU核数的0.7为比较合适的值。偏高说明有比较多的进程在等待使用CPU资源。
+
+
+# 查看系统日志的最后10行
+dmesg | tail -n10
+
+
+# 查看系统的部分核心指标
+vmstat 1
+procs -----------memory---------- ---swap-- -----io---- -system-- ------cpu-----
+ r  b   swpd   free   buff  cache   si   so    bi    bo   in   cs us sy id wa st
+ 0  0      0 188448   8348 1519480    0    0     6    43    1    1  1  0 99  0  0
+说明: 每秒输出一次统计信息
+表头含意: 
+r 等待在CPU资源的进程数，这个数据比平均负载更能体现CPU负载情况，数据中不包含等待IO的进程。如果这个数值大于机器CPU核数，代表CPU资源饱和；
+free 系统可用内存(kbit)，剩余内存不足，也会导致系统性能问题；
+si, so 交换区写入和读取的数量，如果数据不为0，说明系统以及在使用交换区(swap)，机器物理内存已经不足；
+us, sy, id, wa, st 代表CPU时间的消耗，
+	分别表示用户时间(user)，系统(内核)时间(sys)，空闲时间(idle)，IO等待时间(wait)和被偷走的时间(stolen, 一般被其他虚拟机消耗)
+例子: 如果用户时间和系统时间相加非常大，CPU处于忙于执行指令。如果IO等待时间很长，那么系统的瓶颈可能在磁盘IO； 
+	大量CPU时间消耗在用户态，也就是用户应用程序消耗了CPU时间。这不一定是性能问题，需要结合r队列，一起分析；
+
+
+# 查看每个CPU的占用情况
+mpstat -P ALL 1 2
+Linux 3.10.0-327.22.2.el7.x86_64 (ansible) 	08/29/2019 	_x86_64_	(1 CPU)
+11:13:16 AM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+11:13:17 AM  all    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00  100.00
+11:13:17 AM    0    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00    0.00  100.00
+说明 -P{cpu|ALL} 表示监控哪个CPU， cpu在[0,cpu个数-1]中取值
+	1 表示相邻的两次采样的间隔时间
+	2 采样的次数，count只能和delay一起使用
+表头含义
+%user      在internal时间段里，用户态的CPU时间(%)，不包含nice值为负进程  (usr/total)*100
+%nice      在internal时间段里，nice值为负进程的CPU时间(%)   (nice/total)*100
+%sys       在internal时间段里，内核时间(%)       (system/total)*100
+%iowait    在internal时间段里，硬盘IO等待时间(%) (iowait/total)*100
+%irq       在internal时间段里，硬中断时间(%)     (irq/total)*100
+%soft      在internal时间段里，软中断时间(%)     (softirq/total)*100
+%idle      在internal时间段里，CPU除去等待磁盘IO操作外的因为任何原因而空闲的时间闲置时间(%) (idle/total)*100
+
+
+# 输出进程的CPU占用率
+pidstat 2 5 
+Linux 3.10.0-327.22.2.el7.x86_64 (ansible) 	08/29/2019 	_x86_64_	(1 CPU)
+11:28:54 AM   UID       PID    %usr %system  %guest    %CPU   CPU  Command
+11:28:56 AM     0     53005    0.00    0.50    0.00    0.50     0  pidstat
+11:28:56 AM     0     57920    0.50    0.00    0.00    0.50     0  AliYunDun
+说明 2 表示相邻的两次采样的间隔时间
+	5 采样的次数，count只能和delay一起使用
+
+
+# 查看系统分区的IO使用情况
+iostat -xz 1
+Linux 3.10.0-327.22.2.el7.x86_64 (ansible) 	08/29/2019 	_x86_64_	(1 CPU)
+avg-cpu:  %user   %nice %system %iowait  %steal   %idle
+           0.81    0.00    0.35    0.05    0.00   98.79
+Device:   rrqm/s   wrqm/s     r/s     w/s    rkB/s    wkB/s avgrq-sz avgqu-sz   await r_await w_await  svctm  %util
+vda         0.00     0.39    0.21    0.67     5.91    43.45   112.16     0.02   28.27    4.69   35.48   1.03   0.09
+表头含义
+r/s, w/s, rkB/s, wkB/s 分别表示每秒读写次数和每秒读写数据量(千字节)。读写量过大，可能会引起性能问题；
+await IO操作的平均等待时间，单位是毫秒。
+	这是应用程序在和磁盘交互时，需要消耗的时间，包括IO等待和实际操作的耗时。如果这个数值过大，可能是硬件设备遇到了瓶颈或者出现故障；
+avgqu-sz 向设备发出的请求平均数量。如果这个数值大于1，可能是硬件设备已经饱和(部分前端硬件设备支持并行写入)；
+%util 设备利用率。这个数值表示设备的繁忙程度，经验值是如果超过60，可能会影响IO性能（可以参照IO操作平均等待时间）。如果到达100%，说明硬件设备已经饱和；
+
+注：如果显示的是逻辑设备的数据，那么设备利用率不代表后端实际的硬件设备已经饱和。
+	值得注意的是，即使IO性能不理想，也不一定意味这应用程序性能会不好，可以利用诸如预读取、写缓存等策略提升应用性能。
+
+
+# 各进程的I/O情况
+yum install iotop
+iotop
+
+
+# 查看系统内存的使用情况
+free -m 
+              total        used        free      shared  buff/cache   available
+Mem:           1839         170         152           1        1517        1506
+Swap:             0           0           0
+
+说明 -m 单位MB
+
+
+# 查看网络设备的吞吐率
+sar -n DEV 1
+Linux 3.10.0-327.22.2.el7.x86_64 (ansible) 	08/29/2019 	_x86_64_	(1 CPU)
+11:39:05 AM     IFACE   rxpck/s   txpck/s    rxkB/s    txkB/s   rxcmp/s   txcmp/s  rxmcst/s
+11:39:06 AM      tun0      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+11:39:06 AM      eth0     18.18     16.16      1.30      0.97      0.00      0.00      0.00
+11:39:06 AM        lo      0.00      0.00      0.00      0.00      0.00      0.00      0.00
+说明 在排查性能问题时，可以通过网络设备的吞吐量，判断网络设备是否已经饱和；
+
+# 查看TCP连接状态
+sar -n TCP,ETCP 1
+Linux 3.10.0-327.22.2.el7.x86_64 (ansible) 	08/29/2019 	_x86_64_	(1 CPU)
+11:39:57 AM  active/s passive/s    iseg/s    oseg/s
+11:39:58 AM      0.00      0.00     17.17     15.15
+11:39:57 AM  atmptf/s  estres/s retrans/s isegerr/s   orsts/s
+11:39:58 AM      0.00      0.00      0.00      0.00     15.15
+说明 用来判断性能问题是否由于建立了过多的连接，进一步可以判断是主动发起的连接，还是被动接受的连接；
+	TCP重传可能是因为网络环境恶劣；
+表头含义
+active/s  每秒本地发起的TCP连接数，既通过connect调用创建的TCP连接；
+passive/s 每秒远程发起的TCP连接数，即通过accept调用创建的TCP连接；
+retrans/s 每秒TCP重传数量
+
+
+# 查看系统负载(包括uptime,free,vmstat)
+top
+top - 09:44:56 up 16 days, 21:23,  1 user,  load average: 9.59, 4.75, 1.92
+Tasks: 145 total,   2 running, 143 sleeping,   0 stopped,   0 zombie
+Cpu(s): 99.8%us,  0.1%sy,  0.0%ni,  0.2%id,  0.0%wa,  0.0%hi,  0.0%si,  0.0%st
+Mem:   4147888k total,  2493092k used,  1654796k free,   158188k buffers
+Swap:  5144568k total,       56k used,  5144512k free,  2013180k cached
+表头含义 
+1. 系统当前时间+主机已运行时间+用户连接数+系统平均负载
+2. 总进程数+正在运行的+睡眠的+停止的+冻结的
+3. 用户空间占用CPU百分比+内核空间占用CPU百分比+用户进程空间内改变过优先级的进程占用CPU百分比+空闲CPU+等待输入输出的CPU时间百分比+hi+si+st
+4. 物理内存总量+使用的物理内存总量+空闲内存总量+用作内核缓存的内存量
+5. 交换区总量+使用的交换区总量+空闲交换区总量+缓冲的交换区总量
+
+

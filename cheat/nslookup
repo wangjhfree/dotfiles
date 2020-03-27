@@ -1,0 +1,9 @@
+# ubuntu&debain
+apt-get install dnsutils
+
+# fedora/centos
+yum install bind-utils
+
+nslookup baidu.com
+dig baidu.com
+

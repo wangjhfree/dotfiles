@@ -1,15 +1,28 @@
-# git
+>>>>Git<<<<
 
-// 检查配置信息
+# 检查配置信息
 git config --list
+git config > git config --global > git config --system
 
---system /usr/local/etc/gitconfig 或者/etc/gitconfig 系统配置
---global /.config/git/config 或者~/.gitconfig 用户配置
+# 编辑配置
+git config -e 
+             当前项目~project/.git/config
+    --system 系统配置/usr/local/etc/gitconfig 或/etc/gitconfig
+    --global 用户配置/.config/git/config 或~/.gitconfig
 
-// 设置
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
+# 设置
+git config --global user.name "wangjhfree"
+git config --global user.email wangjhfree@qq.com
 
-// 免 账号密码输入,缓存认证信息
-git config --global credential.helper store
+# 免账号密码输入,缓存认证信息
+git config credential.helper 'cache --timeout=36000'
+    - 缓存
+    - 清除:git credential-cache exit
+git config credential.helper 'store --file=~/.gitpassword'
+    - disk
+    - 清除:git config --unset credential.helper
+    - 默认存储地址:~/.git-credentials
+
+# 测试
+ssh -T git@git.ssqian.com.cn
 

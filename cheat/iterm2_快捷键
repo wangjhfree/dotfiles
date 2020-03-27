@@ -1,6 +1,10 @@
-## 终端
+# qt 
+cmd+shift+H 剪切板历史记录
+cmd+F,Tab 搜索+复制
+cmd+Option+B 快照返回
+cmd+Option+E 标签排列切换
 
-```
+
 # 移动
 ctrl+a 到行首
 ctrl+e 到行尾
@@ -25,5 +29,3 @@ ctrl+r
 
 # 清屏
 ctrl+l
-
-```

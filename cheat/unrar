@@ -1,0 +1,11 @@
+> 解压
+
+unrar t exp.rar -y
+
+unrar -?              <== 获取帮助
+
+unrar x <rar-file>    <== 解压文件
+
+unrar t <rar-file>    <== 测试文件
+
+unrar l <rar-file>    <== 列出文件

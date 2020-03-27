@@ -13,12 +13,15 @@ docker inspect --format='{{json .Volumes}}' <container_id> | python -mjson.tool
 # Copy files/folders between a container and your host
 docker cp foo.txt mycontainer:/foo.txt
 
+
+>>>>Docker<<<<
+# 本地仓库大小
+docker system df 
+
 # 获取镜像
 docker search 
 docker pull 
 
-# 本地仓库大小
-docker system df 
 # 本地镜像
 docker images
 docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}"

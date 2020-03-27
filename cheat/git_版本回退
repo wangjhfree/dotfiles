@@ -1,0 +1,14 @@
+# 查看回退commit_id
+git log
+
+# 回退
+git reset --hard commit_id
+
+# 
+git push origin mastef -f
+
+# 返回
+git reflog
+git reset --hard commit_id
+
+

@@ -1,7 +1,7 @@
-[credential]
-	helper = store
 [user]
 	name = wangjhfree
 	email = wangjhfree@qq.com
 [core]
 	editor = /usr/local/bin/vim
+[credential]
+	helper = store
