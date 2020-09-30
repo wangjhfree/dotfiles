@@ -1,0 +1,2 @@
+# 上下文切换的情况，cswch和nvcswch代表自愿和非自愿切换
+pidstat -w <时间间隔> -p <pid>

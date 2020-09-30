@@ -1,0 +1,6 @@
+# homebrew - https://docs.brew.sh
+
+brew upgrade
+brew install mysql@5.6
+brew unlink mysql && brew link mysql@5.6 --force
+brew services stop mysql@5.6

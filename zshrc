@@ -96,8 +96,9 @@ export CHEATCOLORS=true
 
 # mysql
 PATH=$PATH:/usr/local/Cellar/mysql@5.6/5.6.41/bin
+export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
 
 # go
-export GOPATH="${HOME}/go_env"
-export GOBIN="${GOPATH}/bin"
-export PATH="${PATH}:${GOPATH}:${GOPATH}/bin"
+export GOPATH=~/govenv
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:/usr/local/go/bin:$GOBIN

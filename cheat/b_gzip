@@ -1,0 +1,7 @@
+# 解压缩 .gz 文件
+
+# 压缩
+gzip -r 1.js
+
+# 解压
+gzip -d 1.js.gz

@@ -1,0 +1,6 @@
+# 时间间隔1000ms
+jstat -gc <pid> 1000
+
+S0C/S1C、S0U/S1U、EC/EU、OC/OU、MC/MU 分别代表两个 Survivor 区、Eden 区、老年代、元数据区的容量和使用量
+
+YGC/YGT、FGC/FGCT、GCT 则代表 YoungGc、FullGc 的耗时和次数以及总耗时

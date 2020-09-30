@@ -1,0 +1,8 @@
+# jstack用于生成java虚拟机当前时刻的线程快照
+
+# 查看指定进程下线程的信息 16进制转换
+jstack <进程pid> |grep `printf '%x\n' <线程pid>` -C5
+
+# 统计信息
+jstack <进程pid> > jstack.log
+cat jstack.log | grep "java.lang.Thread.State" | sort -nr | uniq -c

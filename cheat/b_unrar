@@ -1,4 +1,4 @@
-> 解压
+# 解压 .rar文件
 
 unrar t exp.rar -y
 

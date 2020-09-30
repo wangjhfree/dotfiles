@@ -1,8 +1,0 @@
-# Kill a process gracefully
-kill -15 <process id>
-
-# Kill a process forcefully
-kill -9 <process id>
-
-# 包含关键字
-ps aux|grep python|awk '{print $2}'|xargs kill -9

@@ -1,0 +1,20 @@
+# 查找指定进程(显示所有进程信息，连同命令行)
+ps -ef|grep <python>
+
+# 指定进程的pid
+ps aux|grep <python>|grep -v grep|awk '{print $2}'
+
+# 目前所有正在内存中的进程
+ps aux
+
+# 所有进程
+ps -A
+
+# 指定进程下的线程
+ps -T -p <pid>
+
+# 指定用户进程
+ps -u root
+
+# 此次登录进程
+ps -l

@@ -1,0 +1,83 @@
+>>>> 容器 <<<<
+
+# docker run 的参数详解
+
+## 容器管理
+-d 后台应用
+sudo docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done"
+
+-it 前台应用
+sudo docker run -a stdin -a stdout -i -t ubuntu /bin/bash (只挂载标准输入输出)
+
+--name 容器命名
+sudo docker run -d --name=test_name registry.liugang/centos:latest
+
+--rm 清楚容器
+sudo docker run --rm centos:latest
+
+## 数据管理
+-v 数据卷
+> 挂载本地目录 /storage 到容器目录 /leader
+sudo docker run --rm=true -it -v /storage /leader java /bin/bash
+
+--volumes-from
+> 1.创建数据卷
+sudo docker run -d -v /dbdata --name dbdata training/postgres echo Data-only container for postgres
+> 2.挂载容器数据卷，不需要保持运行状态
+sudo docker run -d --volumes-from dbdata --name db1 training/postgres
+sudo docker run -d --volumes-from dbdata --name db2 training/postgres
+
+> 1.备份
+docker run --volumes-from dbdata -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
+> 2.移动
+docker run -v /dbdata --name dbdata2 ubuntu /bin/bash
+docker run --volumes-from dbdata2 -v $(pwd):/backup ubuntu cd /dbdata && tar xvf /backup/backup.tar
+
+## 资源配置
+-m 内存资源
+> memory最多使用300M，swap没有限制
+sudo docker run -ti -m 300M --memory-swap -1 centos  /bin/bash
+
+> 设置了memory限制时300M，swap没有指定，默认被设置为与memory一样的值
+docker run -ti -m 300M centos  /bin/bash
+
+> 同时设置了memory和swap 
+docker run -ti -m 300M --memory-swap 1G centos  /bin/bash
+
+> 注：如果发生内存溢出错误，内核会kill掉容器中的进程，--oom-kill-disable
+> 注：如果没有制定-m 参数，可能导致当内存溢出时内核会杀死主机进程
+> 设置容器内存限制100M，并且阻止 OOM killer
+docker run -ti -m 100M --oom-kill-disable centos /bin/bash
+
+-c CPU资源
+https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/docker_run/-c.html
+
+## 访问互联
+-p/P 端口映射
+> 映射所有接口地址 hostPort:containerPort
+sudo docker run -d -p 80:5000 registry
+
+> 映射到指定地址的指定端口 ip:hostPort:containerPort 
+sudo docker run -d -p 127.0.0.1:5000:5000 registry
+
+> 映射到指定地址的任意端口 ip::containerPort
+sudo sudo docker run -d -p 127.0.0.1::5000 registry
+
+> 默认的传输协议是tcp方式，设置为udp
+sudo docker run --name=test_port -d -p 127.0.0.1:5000:5000/udp registry
+
+> 查看端口信息
+docker port test_port
+
+--link 容器互联
+> 1. 创建数据访问容器 db
+sudo docker run -idt --name=db centos
+
+> 2. 容器 web 访问容器 db
+sudo docker run -it --name=web --link=db:test_link centos
+
+> 3. 容器 web 内查看 hosts
+cat /etc/hosts
+172.17.0.11    test_link 600886c7c69d db
+
+
