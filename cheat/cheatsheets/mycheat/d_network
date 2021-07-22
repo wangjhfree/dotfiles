@@ -1,0 +1,23 @@
+>>>> Docker 高级网络配置 <<<<
+
+# 容器访问宿主机-Docker Desktop for Mac
+ps -ef | grep -i docker | grep -i  "\-\-host\-ip" |awk -F "host-ip" '{print $2}' | awk -F '--lowest-ip' '{print $1}'
+# 宿主机访问容器
+使用-p参数映射端口
+
+
+> 创建虚拟网卡
+
+# 查看网桥
+yum install bridge-utils
+brctl show
+
+
+# 容器互联
+1.容器互联，自定义docker网络，减少使用--link
+2.新建网络，-d 网络类型
+docker network create -d bridge jcnet
+3.测试
+docker run -it --rm --name=bx1  --net jcnet centos:centos7.4.1708 bash
+docker run -it --rm --name=bx2  --net jcnet centos:centos7.4.1708 bash
+4.docker 启动时，自动创建docker0虚拟网桥172.17.0.0/16

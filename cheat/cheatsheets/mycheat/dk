@@ -1,3 +1,26 @@
+>>>>Kubernetes<<<<
+
+
+# Taint/Toleration 机制，设置节点不允许运行 Pod
+
+## 为 node1 设置污点
+kubectl taint nodes node1 foo=bar:NoSchedule
+-说明
+    键值对 foo=bar:NoSchedule， NoSchedule 表示在调度新 Pod 时产生作用
+
+## 移除污点，末尾 -
+kubectl taint nodes --all node-role.kubernetes.io/master-
+
+## 修改 Pod 的 .yaml 文件，代表 Pod 可以容忍污点节点
+spec:  
+    tolerations:  
+    - key: "foo"    
+      operator: "Equal"
+      value: "bar"
+      effect: "NoSchedule"
+-说明
+    Equal 键值 foo=bar, Exists 键 foo
+
 
 # 查询节点
 kubectl get node

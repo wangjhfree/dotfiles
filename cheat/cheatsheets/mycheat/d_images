@@ -1,0 +1,101 @@
+>>> 镜像 <<<
+
+# dockerfile 参数详解
+https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/dockerfile_details.html
+
+
+# rootfs管理
+
+## 从容器创建一个新的镜像
+docker commit [OPTIONS] CONTAINER_ID REPOSITORY[:TAG]
+-例子
+    docker commit -a "runoob.com" -m "my apache" a404c6c174a2 mymysql:v1 
+
+## 检查容器里文件结构的更改
+docker diff [OPTIONS] CONTAINER_ID
+-例子
+    docker diff mymysql
+
+## 容器与主机之间的数据拷贝
+docker cp [OPTIONS] CONTAINER_ID:SRC_PATH DEST_PATH|-
+docker cp [OPTIONS] SRC_PATH|- CONTAINER_ID:DEST_PATH
+-例子
+    docker cp /www/runoob 96f7f14e99ab:/www/    // 主机目录copy到容器指定目录下
+    docker cp /www/runoob 96f7f14e99ab:/www     // 目录重命名copy
+    docker cp 96f7f14e99ab:/www /tmp/           // 容器目录copy到主机指定目录下
+
+
+# 本地镜像管理
+
+## 镜像列表 
+docker images [OPTIONS] REPOSITORY[:TAG]
+-例子
+    docker images --format "table {{.ID}}\t{{.Repository}}\t{{.Tag}}" // 格式化显示
+    docker images -f since=mongo:3.2 // 查找3.2之前的镜像
+
+## 移除镜像
+docker rmi [OPTIONS] REPOSITORY[:TAG]
+-例子
+    docker rmi mynginx:v1
+    docker image prune // 移除<none>
+    
+## 标记镜像(重新生成)，归入仓库，确定版本
+docker tag [OPTIONS] SOURCE_IMAGE[:TAG] TARGET_IMAGE[:TAG]
+
+## 使用 Dockerfile 创建镜像
+docker build [OPTIONS] TARGET_IMAGE:[:TAG] BUILD_PATH
+-例子，当前路径
+    docker build -t mynginx:v1 -f /path/Dockerfile .
+
+## 指定镜像的创建历史
+docker history [OPTIONS] REPOSITORY[:TAG]
+
+## 指定镜像导出为tar文件
+docker save [OPTIONS] FILENAME.tar REPOSITORY[:TAG]
+-例子
+    docker save -o mynginx.tar mynginx:v1
+
+## tar文件导入为指定镜像
+docker load [OPTIONS] 
+-例子
+    docker load < mynginx.tar
+    docker load --input mynginx.tar
+
+## tar文件导入为指定镜像
+docker import [OPTIONS] FILENAME.tar REPOSITORY[:TAG]
+-例子
+    docker import mynginx.tar mynginx:v1
+
+
+# 镜像仓库
+
+## 登入/登出远程镜像仓库
+docker login -u $username -p password
+docker logout 
+
+## 搜索远程镜像
+docker search [OPTIONS] NAME
+-例子
+    docker search nginx
+
+## 拉取或更新镜像
+docker pull [OPTIONS] REPOSITORY[:TAG|@DIGEST]
+
+## 推送镜像
+docker push [OPTIONS] REPOSITORY[:TAG]
+
+
+# image使用例子
+docker pull nginx:1.13.7
+docker run --name webserver -d -p 80:80 nginx:1.13.7
+docker ps
+docker exec -it webserver bash
+/# echo '<h1>Hello, Docker!</h1>' > /usr/share/nginx/html/index.html
+/# exit
+docker diff webserver
+docker commit --author "wangjh" --message "修改默认页面" webserver nginx:v1
+docker history nginx:v1
+docker run --name web2 -d -p 8080:80 nginx:v1
+docker push nginx:v1
+注: 慎用docker commit，修改操作会导致额外的内容添加，导致镜像臃肿;
+优点:最方便，最快速;缺点:不规范，无法自动化

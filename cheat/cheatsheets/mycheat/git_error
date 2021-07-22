@@ -1,0 +1,8 @@
+
+fatal: Not possible to fast-forward, aborting.
+
+git pull origin master --rebase
+
+commit
+
+git rebase --continue

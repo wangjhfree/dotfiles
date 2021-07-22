@@ -1,0 +1,34 @@
+>>>>Docker<<<<
+[命令大全]https://www.runoob.com/docker/docker-command-manual.html
+[参考]https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/sudo_docker.html
+
+# docker 状态
+
+## 网络、防火墙
+iptables -nL
+ip a
+
+## 查看子系统
+lssubsys -m
+
+## docker 配置
+cat /etc/sysconfig/docker
+cat /lib/systemd/system/docker.service
+
+## docker 日志
+tail -fn200 /var/log/messages |grep docker
+
+
+# 本地仓库大小 
+docker system df 
+
+# docker 系统信息 --help 查看使用详情
+docker info [OPTIONS]
+-例子
+    docker info | grep Storage  // 查看存储驱动
+
+# docker 版本信息
+docker version [OPTIONS]
+
+# docker deamon
+https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/deamon.html

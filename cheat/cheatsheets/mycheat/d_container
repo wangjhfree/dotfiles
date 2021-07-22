@@ -1,0 +1,104 @@
+>>>> 容器 <<<<
+
+# 容器生命周期管理
+
+## 创建一个新容器并运行一条命令
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+-例子
+    docker run -d ubuntu /bin/sh -c "while true; do echo hello world; sleep 1; done" // -d 后台应用
+    docker run -a stdin -a stdout -it ubuntu /bin/bash (只挂载标准输入输出)             // -it 前台应用
+    docker run --name=test_name -d mynginx:v1                                        // --name 容器命名
+    docker run --rm centos:latest                                                    // --rm 结束后清除容器
+    docker run --rm=true -it -v /storage:/leader java /bin/bash                      // -v 挂载本地目录 /storage 到容器目录 /leader
+    docker run -p 8080:80 -v /data:/data -d nginx:latest                             // -p 本地8080映射到容器80
+
+    --volumes-from 从另一个容器中挂载容器中已创建好的数据卷
+    https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/docker_run/--volumes-from.html
+    -m 内存资源
+    https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/docker_run/-m.html
+    -c CPU资源
+    https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/docker_run/-c.html
+    -p/P 端口映射
+    https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/docker_run/-p.html
+    --link 容器互联
+    https://jiajially.gitbooks.io/dockerguide/content/chapter_fastlearn/docker_run/--link.html
+
+## 启动、停止、重启一个或多个容器
+docker start/stop/restart [OPTIONS] CONTAINER [CONTAINER...]
+
+## 杀死运行中的容器
+docker kill [OPTIONS] CONTAINER [CONTAINER...]
+-例子
+    docker kill -s KILL mynginx
+
+## 删除一个或多个容器
+docker rm [OPTIONS] CONTAINER [CONTAINER...]
+-例子
+    docker rm $(docker ps -a -q)    // 删除所有停止的容器
+    docker rm -f db01 db02          // 强制删除容器1、2
+    docker rm -l db                 // 移除容器连接
+    docker rm -v nginx              // 移除容器nginx，并删除挂载的数据卷
+
+## 暂停、恢复容器中的进程
+docker pause/unpause [OPTIONS] CONTAINER [CONTAINER...]
+
+## 创建一个新容器但是不启动
+docker create [OPTIONS] IMAGE [COMMAND] [ARG...]
+
+## 在运行的容器中执行命令
+docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
+-例子
+    docker exec -it CONTAINER_ID /bin/bash
+
+
+# 容器操作
+
+## 容器列表
+docker ps [OPTIONS]
+-例子
+    docker ps -a -q                         // 所有容器ID
+    docker ps |grep Up|awk '{print $1}'     // 运行中的容器ID
+
+## 容器日志
+docker logs [OPTIONS] CONTAINER
+-例子
+    docker logs --since="2016-07-01" --tail=10 mynginx  // 从2016年7月1日后的最新10条日志
+
+## 获取容器/镜像中的元数据
+docker inspect [OPTIONS] CONTAINER|ID [CONTAINER|ID...]
+-例子
+    docker inspect --format '{{ .State.Pid }}' CONTAINER_ID     // 查看进程号
+    ls -l  /proc/进程号/ns                                       // 容器进程，Namespace对应的文件列表
+    docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' CONTAINER_ID // 查看IP
+
+## 查看端口信息
+docker port [OPTIONS] CONTAINER [PRIVATE_PORT[/PROTO]]
+-例子
+    docker port test_port
+
+## 查看容器中运行的进程信息，支持 ps 命令参数
+docker top [OPTIONS] CONTAINER [ps OPTIONS]
+-例子
+    for i in `docker ps |grep Up|awk '{print $1}'`;do echo \ &&docker top $i; done  // 运行中容器进程信息
+
+## 连接到正在运行中的容器
+docker attach [OPTIONS] CONTAINER
+-例子
+    docker attach --sig-proxy=false mynginx // 连接到容器查看访问信息，默认CTRL-D或CTRL-C关闭容器
+    --sig-proxy=false 确保CTRL-D或CTRL-C不会关闭容器
+
+## 从服务器获取实时事件
+docker events [OPTIONS]
+-例子
+    docker events -f "image"="mysql:5.6" --since="1467302400"   // 显示docker 镜像为mysql:5.6 2016年7月1日后的相关事件
+    --since="2016-07-01" 时间为日期
+
+## 阻塞运行直到容器停止，然后打印出它的退出代码
+docker wait [OPTIONS] CONTAINER [CONTAINER...]
+
+## 将文件系统作为一个tar归档文件导出到STDOUT
+docker export [OPTIONS] CONTAINER
+-例子
+    docker export -o mysql-`date +%Y%m%d`.tar a404c6c174a2
+
+
