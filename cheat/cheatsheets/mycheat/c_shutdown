@@ -1,0 +1,15 @@
+// 关机指令，文档 man shutdown
+shutdown -h 10 "This server will shutdown after 10 mins"
+
+shutdown -h now  马上关机
+
+shutdown -h 20:35 在今天20:35关机
+
+halt 关闭系统，等同 shutdown -h now 和 poweroff
+
+// 重启
+shutdown -r now 马上重启
+
+shutdown -r 10 十分钟后重启
+
+reboot 重启

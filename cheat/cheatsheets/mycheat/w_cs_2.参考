@@ -1,0 +1,52 @@
+[man在线查看*](http://man.he.net/)
+
+[鸟哥的Linux私房菜（简体中文版）*](http://cn.linux.vbird.org/)
+
+[Linux基础*](http://linuxtools-rst.readthedocs.io/zh_CN/latest/base/index.html)
+
+[linux命令大全](http://man.linuxde.net/)
+
+[linux公社](http://www.linuxidc.com/)
+
+[ChinaUnix](http://www.chinaunix.net/)
+
+[ChinaUnix BBS](http://bbs.chinaunix.net/)
+
+[鸟哥的Linux私房菜](http://linux.vbird.org/#)
+
+[Linux命令大全](http://man.linuxde.net/)
+
+[常用命令](http://www.pixelbeat.org/cmdline_zh_CN.html)
+
+[28个Unix/Linux的命令行神器](http://blog.jobbole.com/23638/)
+
+[导航](http://linux.ubuntu.org.cn/)
+
+- 服务器搭建
+    - 服务器网络管理
+    - 常用服务器的架设
+    - 服务器安全策略
+    - 故障排查思路与案例
+    - 构建高性能MySQL数据库系统
+
+- 运维监控
+
+- 性能调优
+    - 性能优化标准
+    - 性能评估与优化案例
+
+- 集群应用
+    - 高性能集群软件
+    - 负载均衡集群
+
+- Linux内核工作方式
+    - 内存分页
+    - 进程切换
+    - interrupt 和 exception ，以及 system call
+    - lock
+    - 进程管理
+    - 内存管理和分配
+    - signal
+    - 文件系统（ext2, ext3）
+    - 输入输出设备
+    - 缓存

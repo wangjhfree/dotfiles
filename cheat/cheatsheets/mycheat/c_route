@@ -1,0 +1,16 @@
+
+# 查看路由状态
+route -n
+
+# 发送ping包到地址IP
+ping IP
+
+# 探测前往地址IP的路由路径
+traceroute IP
+
+# DNS查询，寻找域名domain对应的IP
+host domain
+
+# 反向DNS查询
+host IP
+

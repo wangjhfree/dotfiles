@@ -1,0 +1,28 @@
+// CPU
+cat /proc/cpuinfo
+
+top
+
+// 内存
+cat /proc/meminfo
+
+free -m
+
+// 存储
+df -h
+df -hl：查看磁盘剩余空间
+df -h：查看每个根路径的分区大小
+du -sh [目录名]：返回该目录的大小
+du -sm [文件夹]：返回该文件夹总M数
+du -h [目录名]：查看指定文件夹下的所有文件大小（包含子文件夹）
+
+
+// 网络
+ifconfig
+
+lsof -i:端口号
+netstat -apn|grep 端口号
+
+// 系统版本
+cat /etc/redhat-release
+

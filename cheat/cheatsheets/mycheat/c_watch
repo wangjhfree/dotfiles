@@ -1,0 +1,19 @@
+
+# 查看系统负载情况
+watch -n 1 uptime
+表示每秒刷新一次获得当前的系统负载情况
+输出:系统当前时间，已运行时间，当前在线用户及平均负载值，
+平均负载分为最近1分钟，5分钟，15分钟，负载值越低越好
+
+eg:
+操作redis时，监控内存变化：
+watch -d -n 1 './redis-cli info | grep memory'
+
+(以下为watch工具中的界面内容，一旦内存变化，即实时高亮显示变化）
+Every 1.0s: ./redis-cli info | grep memory                                                                  Mon Apr 28 16:10:36 2014
+
+used_memory:45157376
+used_memory_human:43.07M
+used_memory_rss:47628288
+used_memory_peak:49686080
+used_memory_peak_human:47.38M

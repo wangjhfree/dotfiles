@@ -1,0 +1,20 @@
+
+# 创建
+kubectl create -f <file.yaml>
+
+kubectl replace -f <file.yaml>
+
+kubectl delete -f <file.yaml>
+
+# 查询已部署的文件
+kubectl get deploy <deployment_name> -n <namespace_name> -o wide
+
+# 替换文件
+kubectl replace -f deploy.yaml
+
+# 扩容缩容
+kubectl scale deploy <deployment_name> --replicas=0 -n <namespace_name>
+
+
+# rs 新版pod controller, rs相比rc支持集合式的selector
+kubectl rs 

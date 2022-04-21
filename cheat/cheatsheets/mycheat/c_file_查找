@@ -1,0 +1,37 @@
+# 查找特定文件
+find <指定目录> <指定条件> <指定动作>
+     - <指定目录>： 所要搜索的目录及其所有子目录。默认为当前目录。
+     - <指定条件>： 所要搜索的文件的特征。
+     - <指定动作>： 对搜索结果进行特定的处理。
+Example:
+   find . -name 'my*' -ls
+   locate /etc/sh
+
+# 统计 当前目录下文件个数
+find ./ | wc -l
+
+# 搜寻文件或目录
+find ./ -name 'core*' | xargs file
+
+# 查找目标文件夹中是否有obj文件
+find ./ -name '*.o'
+# 查找文件名-当前目录下包含搜索关键字
+find .|xargs grep -ri "jcgroup" -l
+
+# 递归当前目录及子目录删除所有.o文件
+find ./ -name '*.o' -exec rm {} \;
+# 删除日志
+rm *log
+find ./ -name "*log" -exec rm {};
+
+# find是实时查找. locate为文件系统建立索引数据库, 若有文件更新，需定期执行更新命令来更新索引库
+# 寻找包含string的路径
+locate string
+# 更新数据库
+$ updatedb
+
+# 使用egrep查询文件内容
+egrep 'ajgkl' Xsag.log
+
+# 查找log中包含AAA，但不包含BBB记录的总数
+cat -v record.log | grep AAA | grep -v BBB | wc -l

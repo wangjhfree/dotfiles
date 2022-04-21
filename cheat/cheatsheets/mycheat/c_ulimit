@@ -1,0 +1,5 @@
+# 显示当前所有的系统资源limit信息
+ulimit -a
+
+# 对生成的core文件的大小不进行限制
+ulimit -c unlimited

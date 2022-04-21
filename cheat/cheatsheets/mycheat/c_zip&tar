@@ -1,0 +1,54 @@
+# .zip 解压缩
+unzip demo.zip
+zip demo.zip dirname
+
+# 将某个文件或者目录打包并使用gzip压缩成一个文件
+tar -cvf file.tar [待压缩的档案或者目录名] // 压缩 tar包
+tar -czvf file.tar.gz [待压缩的档案或者目录名] // gz压缩
+tar -cjvf file.tar.bz2 [待压缩的档案或者目录名] // bzip2压缩
+
+# 将压缩文件解压缩至特定的目录
+tar -xvf file.tar -C [解压缩的目录] //解包解压 tar包
+
+# 解压tar.gz
+tar -xzvf demo.tar.gz
+或者
+1. gunzip demo.tar.gz //解压缩
+or
+gzip [-cdtv#] filename]
+	-c 将压缩数据输出到屏幕上
+	-d 解压缩参数
+	-t 进行文件的一致性校验是否损坏
+	-v 显示和原文件相比的压缩比
+		-# 压缩等级 -1最快 -9最慢 -6默认
+2. tar -xvf demo.tar //解包
+
+# 解压tar.bz2
+tar -xjvf demo.tar.bz2 //解包解压 tar.bz2
+或者
+1. bzip2 -d  demo.tar.bz2 //解压缩
+or
+bzip2 [-cdkzv#] demo.tar.bz2
+	-c 将压缩数据输出到屏幕上
+	-d 解开压缩
+	-k 保留元文件并不删除原始文件
+	-z 压缩的参数，该参数代表是执行压缩操作
+	-v 显示和原文件相比的压缩比
+	-# 压缩等级 -1最快 -9最慢 -6默认
+2. tar -xvf demo.tar //解包
+
+# 解打压tar.Z
+tar –xZvf file.tar.Z
+
+参数
+	-c 创建压缩文件
+	-x 解开压缩文件
+	-t 查看压缩包内有哪些文件
+	-z 用Gzip压缩或解压
+	-j 用bzip2压缩或解压
+	-J 用xz压缩或解压
+	-v 显示压缩或解压的过程
+	-f 目标文件名
+	-p 保留原始的权限和属性
+	-P 使用绝对路径来压缩
+	-C 指定解压到的目录

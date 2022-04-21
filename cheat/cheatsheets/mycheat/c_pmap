@@ -1,0 +1,12 @@
+
+# 分析 线程栈
+pmap PID
+eg:
+[/home/weber#]ps -fe| grep redis
+weber    13508 13070  0 08:14 pts/0    00:00:00 grep --color=auto redis
+weber    29515     1  0  2013 ?        02:55:59 ./redis-server redis.conf
+[/home/weber#]pmap 29515
+29515:   ./redis-server redis.conf
+08048000    768K r-x--  /home/weber/soft/redis-2.6.16/src/redis-server
+08108000      4K r----  /home/weber/soft/redis-2.6.16/src/redis-server
+08109000     12K rw---  /home/weber/soft/redis-2.6.16/src/redis-server

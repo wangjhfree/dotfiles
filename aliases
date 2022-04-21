@@ -19,3 +19,8 @@ alias pyd="deactivate"
 # python catalogue
 alias fpy="cd /usr/local/Frameworks/Python.framework/Versions/"
 
+# super
+
+alias superctl="supervisorctl -c /usr/local/etc/supervisord.ini"
+alias supero="supervisord -c /usr/local/etc/supervisord.ini"
+alias superd="ps aux|grep supervisord|grep -v grep|awk '{print $2}'|xargs kill -9;"

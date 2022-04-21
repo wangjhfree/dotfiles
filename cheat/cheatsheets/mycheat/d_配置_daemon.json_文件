@@ -17,25 +17,24 @@ https://docs.docker.com/engine/reference/commandline/dockerd/
     "default-runtime":"runc",
     "default-ulimits":{},
     "disable-legacy-registry":false,
-    "dns": ["192.168.1.1"],             # 设定容器DNS的地址，在容器的 /etc/resolv.conf文件中可查看。
-    "dns-opts": [],                     #  容器 /etc/resolv.conf 文件，其他设置
-    "dns-search": [],               # 设定容器的搜索域，当设定搜索域为 .example.com 时，在搜索一个名为 host 的 主机时，DNS不仅搜索host，还会搜                             
-                                  索host.example.com 。 注意：如果不设置， Docker 会默认用主机上的 /etc/resolv.conf 来配置容器。
+    "dns": ["192.168.1.1"], 设定容器DNS的地址，在容器的 /etc/resolv.conf文件中可查看。
+    "dns-opts": [], #  容器 /etc/resolv.conf 文件，其他设置
+    "dns-search": [], # 设定容器的搜索域，当设定搜索域为 .example.com 时，在搜索一个名为 host 的 主机时，DNS不仅搜索host，还会搜索host.example.com 。 注意：如果不设置， Docker 会默认用主机上的 /etc/resolv.conf 来配置容器。
 
     "exec-opts": [],
     "exec-root":"",
     "fixed-cidr":"",
     "fixed-cidr-v6":"",
-    "graph":"/var/lib/docker",              ＃已废弃，使用data-root代替,这个主要看docker的版本
-    "data-root":"/var/lib/docker",          ＃Docker运行时使用的根路径,根路径下的内容稍后介绍，默认/var/lib/docker
-    "group": "",                            #Unix套接字的属组,仅指/var/run/docker.sock
-    "hosts": [],                           #设置容器hosts
+    "graph":"/var/lib/docker", ＃已废弃，使用data-root代替,这个主要看docker的版本
+    "data-root":"/var/lib/docker", ＃Docker运行时使用的根路径,根路径下的内容稍后介绍，默认/var/lib/docker
+    "group": "", #Unix套接字的属组,仅指/var/run/docker.sock
+    "hosts": [], #设置容器hosts
     "icc": false,
-    "insecure-registries": [],       #配置docker的私库地址
+    "insecure-registries": [], #配置docker的私库地址
     "ip":"0.0.0.0",
     "iptables": false,
     "ipv6": false,
-    "ip-forward": false,          #默认true, 启用 net.ipv4.ip_forward ,进入容器后使用 sysctl -a | grepnet.ipv4.ip_forward 查看
+    "ip-forward": false, #默认true, 启用 net.ipv4.ip_forward ,进入容器后使用 sysctl -a | grepnet.ipv4.ip_forward 查看
 
     "ip-masq":false,
     "labels":["nodeName=node-121"],   # docker主机的标签，很实用的功能,例如定义：–label nodeName=host-121

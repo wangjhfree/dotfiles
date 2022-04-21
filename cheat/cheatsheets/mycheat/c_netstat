@@ -1,0 +1,16 @@
+
+netstat命令用于显示各种网关相关信息，如网络连接，路由表，接口状态，masquerade连接，多播成员等
+
+# 列出所有端口
+netstat -a
+
+# 列出所有tcp端口
+netstat -at
+
+# 列出所有有监听的服务状态
+netstat -l
+
+# 查询端口
+netstat -antp |grep 6379
+ps 6379
+lsof -i:6379

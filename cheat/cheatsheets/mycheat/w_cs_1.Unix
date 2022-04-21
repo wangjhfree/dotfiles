@@ -1,0 +1,30 @@
+# Unix
+
+UNIX诞生于贝尔实验室，当时还是AT&T旗下的部分，所以版权归AT&T商业所有。
+
+这套系统很不错，但是其代码有严格的商业限制，授权费很昂贵，使用上受到制约。所以大家参考着它的设计思想，开发了别的操作系统，一般叫作「类 UNIX」。 Linux 就是其中之一。
+
+Linux只是一个内核，不是可以拿来直接使用的完整的操作系统。但是大家可以在它基础上随意扩展，于是就诞生了诸多「Linux 发行版」。
+
+内核和发行版的关系就像是Windows NT和Windows XP，Windows Server 2003。 Windows NT是内核，Windows XP，Windows Server 2003 是两种发行版，虽然看上去是两个操作系统，其实内核是一样的。
+
+类UNIX不是只有Linux一个派系，还有许多其他派系。现在传统上继承衣钵的应该是FreeBSD，真正在桌面系统发扬光大的是Mac OS X。
+
+大家熟悉的关于操作系统名称树形结构图：
+
+```
+UNIX
+    |-- FreeBSD 学院主导
+    |-- Mac OS X 商业主导
+    |-- Linux 社区主导
+        |-- Red Hat, Centos
+        |-- Debian. Ubuntu
+        |-- Android       
+```
+Linux不是一个操作系统发行版，而是一个内核。
+
+GUN(GNU's Not Unix)，包括文本编辑器Emacs、C语言编译器GCC，以及大部分UNIX系统的程序库和工具。
+
+Linux只是一个操作系统内核而已，而GNU提供了大量的自由软件来丰富在其之上各种应用程序。
+
+准确来说，Liunx应该是GNU/Linux。

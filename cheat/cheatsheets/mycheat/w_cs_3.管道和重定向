@@ -1,0 +1,25 @@
+
+# 管道和重定向
+
+* 批处理命令连接执行，用 |
+* 串联，使用分号 ;
+* 前面成功，则执行后面一条，否则，不执行 &&
+* 前面失败，则后一条执行 ||
+
+# 提示命名是否执行成功or失败
+ls /proc && echo suc || echo failed
+if ls /proc; then echo suc; else echo fail; fi
+
+# 重定向， 将标准输出和标准错误重定向到同一文件 ?
+ls proc/*.c > list 2 > &l
+ls proc/*.c &> list
+
+# 清空文件
+:> a.txt
+
+# aa最加文件到a.txt
+echo aa >> a.txt
+
+# 管道命令符'|'作用将前一个命令的标准输出当做后一个命令的标准输入，格式'命令A|命令B'
+grep '/sbin/nologin' /ect/passwd |wc -l
+ls -l /etc/|more

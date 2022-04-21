@@ -1,0 +1,29 @@
+
+# 查询所有的pod
+kubectl get pod --all-namespaces
+
+# 查询pod位于哪个node
+kubectl get pod <pod_name> -o wide -n <namespace_name>
+
+# 补丁
+kubectl patch pod <pod_name> -p '{"metadata":{"labels":{"app":"nginx-3"}}}'
+
+# 编辑
+kubectl edit po <pod_name>
+
+# 进入容器
+kubectl exec -it <pod_name> -c <container_name> bash -n <namespace_name>
+-c, --container="": 容器名。如果未指定，使用pod中的一个容器。
+-p, --pod="": Pod名。
+-i, --stdin[=false]: 将控制台输入发送到容器。
+-t, --tty[=false]: 将标准输入控制台作为容器的控制台输入。
+
+# 强制删除部署的服务(Terminating, 删除不了)
+kubectl delete pod <pod_name> --grace-period=0 --force -n <namespace_name>
+--force --grace-period=0 强制删除
+
+kubectl delete po <pod_name>
+kubectl delete po -l <app=nginx-3>
+
+# 重启次数统计
+kubectl get pods --sort-by='.status.containerStatuses[0].restartCount' -n <namespace_name>

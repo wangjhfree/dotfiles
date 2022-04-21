@@ -1,0 +1,47 @@
+###SSH远程登录
+
+* Secure Shell,安全外壳协议
+* 应用层和传输层的协议
+* 支持多种系统
+* 加密且压缩传输
+
+终端仿真程序 Secure CRT；
+安全终端模拟软件 Xshell
+
+```
+//安装OpenSSH，服务/客户端
+$apt-get install openssl-server openssh-client
+
+// 连接远程服务器
+$ssh develop@192.168.1.104  password
+
+//提示 目录:/Users/abner/.ssh/known_hosts
+$ vi know_hosts
+
+//公钥验证机制
+    公钥和密钥是两份文件，服务端持有公钥，用来加密；客户端持有密钥，用来解密。客户端向服务端发起连接请求时，服务端会生成一串随机数，经过公钥加密后传给客户端。这时客户端会用密钥解密获取随机数，再返回服务端。最后服务端判断一下，如果客户端能够返回正确的随机数，就认为校验通过了 ，可以进行连接。否则您就从哪儿来会哪儿去吧。
+
+//本地主机（客户端）需要生成公钥（public key）和密钥（private key）
+目录:/Users/abner/.ssh/    id_rsa.pub and id_rsa
+$ ssh-keygen -t rsa
+
+//客户端向服务端传文件
+$ scp id_rsa.pub develop@192.168.1.104:~/jh_id_rsa.pub
+
+//服务端wangjh_id_rsa.pub添加内容到authorized_keys文件
+目录:~/.ssh/authorized_keys
+$ cat jh_id_rsa.pub >> authorized_keys
+
+//缓存密钥（private key），避免输入密语
+$ ssh-add ~/.ssh/id_rsa
+
+//使用config配置文件保存用户和主机名
+目录:~/.ssh/config
+Host server
+User wangjh
+HostName 192.168.1.101
+
+//重启ssh服务
+$ service sshd restart
+
+```

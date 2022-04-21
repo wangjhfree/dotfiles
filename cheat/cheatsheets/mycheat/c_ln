@@ -1,0 +1,6 @@
+
+# 硬链接, 删除一个,仍能找到
+ln cc ccAgain
+
+# 软, 删除源,无法使用
+ln -s cc ccTo

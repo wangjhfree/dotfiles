@@ -1,4 +1,0 @@
-# 结束进程(包含关键字)
-
-ps -ef|grep celery|wc -l
-ps -ef|grep celery|grep -v grep|awk '{print $2}'|xargs kill -9

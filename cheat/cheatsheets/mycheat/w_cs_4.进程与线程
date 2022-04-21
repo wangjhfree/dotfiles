@@ -1,0 +1,23 @@
+
+# 后台启动进程
+nohup [python test.py 命令] &
+
+# 查询进程
+ps
+pgrep 进程ID
+lsof 端口进程
+
+# 终止进程
+kill
+
+# 监控进程
+top
+
+# 分析线程
+pmap
+
+# 系统负载
+uptime
+
+# 查看系统日志的最后10行
+dmesg | tail -n10

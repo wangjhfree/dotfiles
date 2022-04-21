@@ -1,0 +1,105 @@
+
+# 文件列表
+ls [options] [file_or_dirs]
+    [options]
+        -a  列出当前隐藏目录
+        -l  列出详细内容
+        -ld 列出本身目录属性
+        -r  逆序
+        -t  修改时间
+    [file_or_dirs]
+        /   根目录
+Example: 
+    dr-xr-xr-x 2 root root 4096 Dec 14  2012 bin
+    第一个字符的含义:
+    [d],目录
+    [-],文件
+    [l],链接文档
+    [b],为装置文件里面的可供储存的接口设备(可随机存取装置)
+    [c],装置文件里面的串行端口设备，例如键盘、鼠标(一次性读取装置)
+
+# 查看文件: cat vi head tail more less
+# 查看文件的格式
+file [options] filename
+
+# 查看较短纯文本
+cat [-args] 文件
+    -n 显示行号
+    -b 显示行号(不包括空行)
+    -A 显示出不可见的符号，例如空格，tab键等
+# 显示时同时显示行号
+cat -n
+bl [-bnw] 文件
+tac 从最后一行
+nl [-bnw] 文件
+
+# 查看较长纯文本
+more [-args] 文件
+    -数字 预先显示的行数(默认一页)
+    -d 显示提示语与报错信息
+# 一页一页翻动
+more /etc/man.config
+# 分页查看文本文件,less-使用pgUp、pgDown翻页
+less [options] filename
+
+# 查看纯文本前N行
+head -n 20 filename
+head -20 filename
+# 只看前10行(当前目录所有文件)
+head -10 **
+
+# 查看纯文本后N行
+tail -n 20 filename
+tail -20 filename
+# 动态显示文本的最新消息
+tail -f cat.log
+
+# 查看特殊格式的文件
+od [-args] 文件
+    -t a 默认字符
+    -t c ASCII字符
+    -t o 八进制
+    -t d 十进制
+    -t x 十六进制
+    -t f 浮点数
+
+# 转换文本文件中的字符
+tr [原始字符] [目标字符]
+cat tr.txt | tr [a-z][A-Z]
+
+# 统计指定文本的行数、字数、字节数
+wc [-args] 文本
+    -l 只显示行数
+    -w 只显示单词数
+    -c 只显示字节数
+
+# 通过列来提取文本字符
+cut [-args] 文本
+    -d 分隔符  自定分隔符，默认Tab
+    -f 指定显示的
+    -c 单位改为字符
+
+# 获取root用户默认的shell解释器
+grep ^root /etc/passwd |cut -d: -f 7
+
+# 查询文件内容, egrep=grep -E
+egrep 'socket' www.log
+grep -rn 'jcgroup'
+
+# 比较多个文本文件的差异
+diff [-args] 文件
+    -b 忽略空格引起的差异
+    -B 忽略空行引起的差异
+    --brief或-q 仅报告是否存在差异
+    -c 使用上下文输出格式
+    
+例子 diff file1 file2
+
+
+
+
+
+
+
+
+

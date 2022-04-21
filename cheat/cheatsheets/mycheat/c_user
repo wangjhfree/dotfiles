@@ -1,0 +1,65 @@
+# 创建用户
+	Mac创建有区别，用[dscl](http://serverfault.com/questions/20702/how-do-i-create-user-accounts-from-the-terminal-in-mac-os-x-10-5)
+useradd [-u UID] [-g 初始群组] [-G 次要群组] [-mM] [-c 说明] [-d 家目录] [-s shell] 'username'
+    -u 制定一个特殊的UID给该账号
+    -g 指定一个主要群组的名称，会修改passwd文件
+    -G 指定次要群组的名称，会修改group文件
+    -m 如果目录不存在则创建
+    -M 强制不要创建，系统账号默认
+    -c passwd文件的第五个字段的说明文字
+    -d /home/ 指定用户目录
+    -s /bin/zsh 只用用户使用的shell
+
+例子 useradd -g sales jack -G company, employess
+
+
+# 用户密码
+passwd 'username'
+
+# 删除用户
+userdel [-r] username
+	-r 用户主目录一起删除
+
+# 修改用户
+usermod [-cdegGlsuLU] 'username'
+    -c 该账号的说明文字
+    -d 账号的家目录
+    -e 指定用户账号禁用日期，格式YY-MM-DD
+    -G 修改次要群组的名称，会修改group文件
+    -g 修改主要群组名称
+    -a 与-G合用，可增加次要群组
+    -l 将当前账号的名称重命名为指定的名称
+    -u 修改UID
+    -L 暂时将用户的密码冻结无法登陆
+    -U 解冻账号，删除shadow
+
+# 切换用户
+su 'username'
+
+# 同步用户/etc/passwd到/etc/shadow
+pwconv
+
+# 校验配置文件/etc/passwd和/etc/shadow 文件内容是否合法或完整
+pwck
+
+# pwconv的逆向操作
+pwunconv
+
+# 查看用户信息工具
+finger [-s] 'username'
+	-s 仅列出用户的账号、全名、登陆时间等
+
+# 修改用户权限
+配置文件->root用户下../etc/sudoers
+
+# 可以查阅某人或者自己相关的UID、GID信息
+id
+
+# 查看当前用户
+whoami
+
+# 当前登录用户
+who 或 w
+
+# 用户 组 
+users 或 groups

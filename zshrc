@@ -91,15 +91,3 @@ for file in ~/.{exports,aliases,functions}; do
 done;
 unset file;
 
-# cheat
-export CHEATCOLORS=true
-
-# go
-export GOPATH=~/govenv
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:/usr/local/go/bin:$GOBIN
-
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH="/usr/local/opt/mysql@5.7/bin:$PATH"
-export PATH="/usr/local/opt/python@3.7/bin:$PATH"

@@ -1,0 +1,17 @@
+# 创建群组
+groupadd [-g gid] [-r] 组名
+	-g 指定创建的GID，在group文件中
+	-r 建立系统群组
+    -K: 覆盖配置文件"/etc/login.defs"
+    -o: 允许添加组ID不唯一的工作组
+
+# 修改群组
+groupmod [-g gid] [-n group_name] 组群名
+	-g 指定修改的GID
+	-n 修改组名
+
+# 删除群组
+groupdel [groupname]
+
+# 退出
+exit

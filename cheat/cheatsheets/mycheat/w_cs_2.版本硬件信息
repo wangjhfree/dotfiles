@@ -1,45 +1,43 @@
-# 系统版本
+# 查看系统版本
 cat /etc/*-release
-lsb_release
-    -v 显示版本信息
-    -i 显示发行版的id
-    -d 显示发行版的描述信息
-    -r 显示当前系统是发行版的具体版本号
-    -c 发行版代号
-    -a 显示上面的所有信息
-    -h 显示帮助信息
-uname
-    -a 显示全部信息
-    -m 显示电脑类型
-    -n 显示网络上的主机名称
-    -r 操作系统的发行编号
-    -s 操作系统的名称
-    -v 操作系统的版本
-    -p 输出处理器类型或者'unknown'
-    -i 输出硬件平台或'unknown'
-    -o 输出操作系统的名称
-    --help 帮助
-    --version 版本
+lsb_release -a
+# 内核
+uname -sr
+# 架构
+arch
+
 
 # 查看CPU信息
 more /proc/cpuinfo
-# CPU个数
-grep 'core id' /proc/cpuinfo | wc -l
-grep -c processor /proc/cpuinfo
-# 线程数
-grep 'processor' /proc/cpuinfo | sort -u | wc -l
+# 物理CPU个数
+cat /proc/cpuinfo| grep "physical id"| sort| uniq| wc -l
+# 每个物理CPU的核数
+cat /proc/cpuinfo| grep "cpu cores"| uniq
+# 逻辑CPU个数
+cat /proc/cpuinfo| grep "processor"| wc -l
+# 查看CPU使用情况
+sar -u 5 10
+
 
 # 查看内存信息
 more /proc/meminfo
 
+
 # 查看磁盘分区信息
 fdisk -l
+
 
 # 查看加载的内核模块
 lsmod
 
+
 # 查看环境变量
 env
+
+
+# 查看机器型号
+dmidecode | grep "Product Name"
+
 
 # 查看系统PCI设备
 lspci
@@ -49,6 +47,13 @@ lspci -tv
 lsusb -tv
 # 列出块设备，除了RAM外
 lsblk
+
+# ifconfig
+yum install -y net-tools
+
+# 支持鼠标
+yum install -y gpm*
+
 
 # mac核数
 sysctl machdep.cpu

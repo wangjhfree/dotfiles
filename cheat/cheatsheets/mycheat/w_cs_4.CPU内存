@@ -1,0 +1,13 @@
+
+# 查看CPU、内存、使用情况
+sar 
+# linux 下有vmstat 、 Unix 有prstat
+vmstat
+prstat
+
+# 每个CPU的占用情况
+mpstat
+pidstat
+
+# 实时查看
+watch

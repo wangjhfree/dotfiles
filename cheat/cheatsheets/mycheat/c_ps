@@ -1,14 +1,17 @@
 # 查找指定进程(显示所有进程信息，连同命令行)
-ps -ef|grep <python>
+ps -ef |grep <python>
+   -aux 所有状态
 
 # 指定进程的pid
 ps aux|grep <python>|grep -v grep|awk '{print $2}'
+pgrep -l nginx
 
 # 目前所有正在内存中的进程
 ps aux
 
 # 所有进程
 ps -A
+ps -ajx
 
 # 指定进程下的线程
 ps -T -p <pid>

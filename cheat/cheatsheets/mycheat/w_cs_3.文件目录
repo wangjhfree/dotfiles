@@ -1,0 +1,138 @@
+# 关于文件压缩和打包
+文件压缩，通过压缩算法将文件的体积缩小，同时会将多个文件合并至一起方便交换、传输。
+文件打包，将多个文件或者整个目录合并成一个文件，用来进行文件的备份、分发、传输等。tar
+
+
+# Linux支持的压缩格式
+    *.Z, Compress程序压缩文件
+    *.gz, gzip程序压缩文件
+    *.bz2, bzip2程序压缩文件
+    *.tar, tar程序打包文件， 并未压缩
+    *.tar.gz, tar打包，gzip压缩
+    *.tar.bz2, tar打包，bzip2压缩
+
+
+# 解压缩命令
+zip
+tar
+gzip 
+bzip2
+
+
+# 文件系统架构
+1.Linux文件系统具有层级性
+    * 文件或目录起始于根目录"/"成为树状结构
+    * 最顶层由"/"开始
+2.文件和目录名区分大小写
+3.路径通过"/"分隔开
+4.".."表示上层目录，"."表示当前目录
+5.隐藏目录或者文件名"."开始
+
+
+# 目录及文件的命名规则
+1.不超过255个字符
+2.区分大小写
+    * file、File、FILE表示不同文件
+3.除了/外，所有字符都是合法的
+    * 避免文件名首字符使用+-.等
+    * 避免使用空格、制表符和@#￥%[]()等
+4.最好使用有意义的名称来命名
+
+
+# 重要目录说明
+```
+/home
+	用户的目录
+	Example: root用户的home目录是/root，普通用户/home/jh
+
+/bin
+	常用的可执行文件
+	Example: /bin、/usr/bin、/sbin等
+
+/boot
+	系统内核和开机必要文件
+
+/dev
+	Linux系统所有的设备文件
+
+/etc
+	该目录用来存放所有的系统管理所需要的配置文件和子目录
+
+/lib
+	该目录存放着系统最基本的动态连接共享库，其作用类似于Windows里的DLL文件，几乎所有应用程序都需要用到的共享库
+	Exapmle: /lib、/usr/lib、/usr/locate/lib等
+
+/lost+found
+	该目录一般为空，当系统非法关机后，这里就存放一些文件
+
+/media
+	linux系统会自动识别一些设备，例如U盘、光驱等等，当识别后，linux会把识别的设备挂载到这个目录下
+
+/mnt
+	系统提供该目录为了让用户挂载别的文件系统，可以将光驱挂载在/mnt/上，进入该目录后可查看光驱的内容。
+
+/opt
+	这是给主机额外安装软件所摆放的目录。比如你安装一个ORACLE数据库则就可以放到这个目录下。默认是空的。
+
+/proc
+	这个目录是一个虚拟的目录，它是系统内存的映射，我们可以通过直接访问这个目录来获取系统信息。
+	这个目录的内容不在硬盘上而是在内存里，我们也可以直接修改里面的某些文件，比如可以通过下面的命令来屏蔽主机的ping命令，使别人无法ping你的机器
+
+/srv
+	该目录存放一些服务启动之后需要提取的数据。
+
+/sys
+	这是linux2.6内核的一个很大的变化。该目录下安装了2.6内核中新出现的一个文件系统 sysfs；sysfs文件系统集成了3种文件系统的信息：针对进程信息的proc文件系统、针对设备的devfs文件系统以及针对伪终端的devpts文件系统；
+	该文件系统是内核设备树的一个直观反映；
+	当一个内核对象被创建的时候，对应的文件和目录也在内核对象子系统中被创建。
+
+/tmp
+	临时文件
+
+/var
+	这个目录中存放着在不断扩充着的东西，我们习惯将那些经常被修改的目录放在这个目录下。包括各种日志文件。
+
+/usr
+	unix system resource，保存程序的相关文件
+```
+
+
+# Unix通用目录
+/bin        传统unix命令存放目录，如ls, rm, mv等
+/sbin       传统unix管理类命令存放目录，如fdisk, ifconfig等
+/usr        第三方程序安装目录
+/dev        设备文件存放目录，如何代表硬盘的/dev/disk0
+/usr/bin, /usr/sbin, /usr/lib    其中/usr/bin目录中存放了共享库(动态链接库)
+/etc        标准unix系统配置文件存放目录，如用户密码文件/etc/passwd, 此目录实际为指向/private/etc的链接
+/tmp        临时文件存放目录，其权限为所有人任意读写。此目录实际为指向/private/tmp的链接
+/var        存放经常变化的文件，如日志文件。此目录实际为指向/private/var的链接
+
+# mac独有目录
+/Application    应用程序目录，默认所有的GUI应用程序都安装在这里
+/Library    系统的数据文件、帮助文件、文档等
+/Network    网络节点存放目录
+/System     只包含一个名为Library的目录，这个子目录中存放了系统的绝大部分组件，如各种framework，以及内核模块，字体文件等
+/Users      存放用户的个人资料和配置，每个用户有自己的单独目录
+/Volumes    文件系统挂载点存放目录
+/cores      内核转储文件存放目录。当一个进程崩溃时，如果系统允许则会产生转储文件
+/private    里面的子目录存放了/tmp, /var, /etc等链接目录的目标目录
+
+
+# Mac环境变量的加载顺序
+/etc/profile > /etc/paths > /etc/bashrc # 系统级别，启动就会加载
+~/.bash_profile > ~/.bash_login > ~/.profile > ~/.bashrc # 用户级的环境变量
+	'/etc/paths' 包含
+	/usr/bin
+	/bin
+	/usr/sbin
+	/sbin
+	/usr/local/bin
+
+# Homebrew 的二进制执行文件在 /usr/local/bin
+bin在使用时的查找不是覆盖原则，而是优先查找，所以例如mac已经自带了sqlite3，如果brew安装后，最新版的sqlite3是不会被调用的，因此可以将顺序修改一下以达到目的。
+
+# 原Python路径
+/Library/Frameworks/Python.framework/Versions/2.7/
+
+# brew 安装Python路径
+/usr/local/Frameworks/Python.framework/Versions/
