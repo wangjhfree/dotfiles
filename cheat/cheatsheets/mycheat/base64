@@ -1,0 +1,6 @@
+import base64
+
+base64.b64encode(bytes('', 'utf-8'))
+
+base64.b64decode('').decode('utf-8')
+
